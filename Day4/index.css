@@ -114,11 +114,16 @@ body{
 .content .buttons a button{
     cursor: pointer;
     text-decoration: none;
-    color: rgb(226, 96, 9);
+    color: #fff;
+    font-weight: 700;
     font-size: 1.2em;
     padding: 10px 40px;
-    border: none;
+    border: 1px solid #047692;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.308);
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.content .buttons a .subs{
+    background-color: #047692;
 }
