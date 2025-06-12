@@ -10,12 +10,21 @@ body{
     box-sizing: border-box;
 }
 
+.everything{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .navbar{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .navbar nav{
@@ -62,3 +71,54 @@ body{
     border-radius: 5px;
 }
 
+.content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    gap: 50px;
+}
+
+.content .intro-text{
+    width: 100%;
+}
+
+.content .intro-text h1{
+    color: white;
+    letter-spacing: 5px;
+    font-size: 4em;
+    text-align: center;
+    /* margin-bottom: 20px; */
+    text-transform: uppercase;
+    line-height: 15px;
+}
+
+.content .intro-text p{
+    color: white;
+    font-size: 1.1em;
+    text-align: center;
+    font-weight: 100;
+    /* margin-top: 20px; */
+}
+
+.content .buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.content .buttons a button{
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(226, 96, 9);
+    font-size: 1.2em;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.308);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
