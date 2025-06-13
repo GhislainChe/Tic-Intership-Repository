@@ -92,6 +92,7 @@ body{
 .content{
     width: 100%;
     height: 100%;
+    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -166,5 +167,32 @@ body{
     .navbar nav .links .menu-toggle:checked + .menu-icon + ul{
         display: flex;
     }
+
+    .content {
+    gap: 30px;
+    padding: 0 10px;
+  }
+
+  .content .intro-text h1 {
+    font-size: clamp(1.5em, 8vw, 3em);
+    line-height: 1.2em;
+    letter-spacing: 2px;
+  }
+
+  .content .intro-text p {
+    font-size: 1em;
+    padding: 0 10px;
+  }
+
+  .content .buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .content .buttons a button {
+    width: 100%;
+    font-size: 1em;
+    padding: 10px;
+  }
     
 }
