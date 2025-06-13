@@ -106,20 +106,23 @@ body{
 
 .content .intro-text h1{
     color: white;
-    letter-spacing: 5px;
-    font-size: clamp(1.2em, 5vw, 5em);
+    letter-spacing: 1px;
+    font-size: clamp(2em, 6vw, 4em);
     text-align: center;
     /* margin-bottom: 20px; */
     text-transform: uppercase;
-    line-height: 15px;
+    line-height: 1.2;
 }
 
 .content .intro-text p{
     color: white;
-    font-size: 1.1em;
+    font-size: clamp(1em, 2.5vw, 1.4em);
     text-align: center;
-    font-weight: 100;
-    /* margin-top: 20px; */
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
 .content .buttons{
@@ -135,12 +138,16 @@ body{
     text-decoration: none;
     color: #fff;
     font-weight: 700;
-    font-size: 1.2em;
-    padding: 10px 40px;
+    font-size: clamp(1em, 2.5vw, 1.2em);
+    padding: 12px 28px;
     border: 1px solid #047692;
     border-radius: 25px;
     background-color: rgba(255, 255, 255, 0.308);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: transform 0.2s ease-in-out;
+}
+
+.content .buttons a button:hover{
+    transform: scale(1.05);
 }
 
 .content .buttons a .subs{
@@ -169,20 +176,20 @@ body{
     }
 
     .content {
-    gap: 30px;
-    padding: 0 10px;
+        gap: 30px;
+        padding: 0 10px;
   }
 
-  .content .intro-text h1 {
-    font-size: clamp(1.5em, 8vw, 3em);
-    line-height: 1.2em;
-    letter-spacing: 2px;
-  }
+    .content .intro-text h1 {
+        font-size: clamp(1.5em, 8vw, 3em);
+        line-height: 1.2em;
+        letter-spacing: 2px;
+    }
 
-  .content .intro-text p {
-    font-size: 1em;
-    padding: 0 10px;
-  }
+    .content .intro-text p {
+      font-size: 1em;
+      padding: 0 10px;
+    }
 
   .content .buttons {
     flex-direction: column;
@@ -192,7 +199,22 @@ body{
   .content .buttons a button {
     width: 100%;
     font-size: 1em;
-    padding: 10px;
+    padding: 15px 40px;
   }
     
+}
+
+@media (max-width: 480px) {
+  .content .intro-text h1 {
+    font-size: 1.8em;
+  }
+
+  .content .intro-text p {
+    font-size: 0.95em;
+  }
+
+  .content .buttons a button {
+    font-size: 1em;
+    padding: 15px 40px;
+  }
 }
