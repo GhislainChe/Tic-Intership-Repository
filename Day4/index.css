@@ -218,3 +218,86 @@ body{
     padding: 15px 40px;
   }
 }
+
+/* css for the login form */
+
+.login-page {
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 30px 25px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  color: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.form-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-container input {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1em;
+  outline: none;
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+.form-container input::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+.form-container button {
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  background-color: #047692;
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #03657b;
+}
+
+.form-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+.form-links a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.form-links a:hover {
+  color: white;
+}
