@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ghislain Console Learning.</title>
+    <link rel="stylesheet" href="learnjs.css">
 </head>
 <body>
-    <h1>This is My page with Buttons that functions in the console when clicked.</h1>
-    <button id="button1" onclick="button1()">Cick to input my information in the console</button>
-    <button id="button2" onclick="button2()">Click to see the arithmetic operations of 10 and 4 in the Console</button>
-    <button id="button3" onclick="button3()">Click to see the arithmetic operators in action</button>
-    <button id="button4" onclick="sum()">Click to see the sum of two numbers</button>
-    <button id="button5" onclick="score()">Click to see the score evaluation</button>
+    <h1>This is My page with Buttons that functions <br>in the console when clicked.</h1>
+    <h2>Click The buttons to see the results in the console</h2>
+    <p>Open the console to see the buttons.To open the console,<br> right click on an empty space on the page and select inspect. <br>There now you will see the developer options open <br> in your browser and below you click the console tab.</p>
+    <div class="buttons">
+        <button id="button1" onclick="button1()">Input my info on the console</button>
+        <button id="button2" onclick="button2()">arithmetic operations 3 & 4</button>
+        <button id="button3" onclick="button3()">Click to see the arithmetic operators</button>
+        <button id="button4" onclick="sum()">Click to see the sum of two numbers</button>
+        <button id="button5" onclick="score()">Click to see the score evaluation</button>
+    </div>
     <script>
         function button1(){
             console.log('My Information on the Console')
@@ -63,6 +68,8 @@
             console.log("passed?", passed);
             console.log("Excellent?", excellent);
         }
+
+        
     </script>
 </body>
 </html>
