@@ -63,7 +63,7 @@ button:hover{
     background-color: #354fe6;
 }
 
-@media (max-width: 2500px) {
+@media (max-width: 1000px) {
     h1{
         display: none;
     }
