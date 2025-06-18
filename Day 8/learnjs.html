@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript tutorials 1.</title>
+    <title>Ghislain Console Learning.</title>
 </head>
 <body>
-    <h1>Check the Console to see my information.</h1>
+    <h1>This is My page with Buttons that functions in the console when clicked.</h1>
     <button id="button1" onclick="button1()">Cick to input my information in the console</button>
     <button id="button2" onclick="button2()">Click to see the arithmetic operations of 10 and 4 in the Console</button>
-    <button id="button3" onclick="button3()">Click to see the arithmetic operators</button>
+    <button id="button3" onclick="button3()">Click to see the arithmetic operators in action</button>
+    <button id="button4" onclick="sum()">Click to see the sum of two numbers</button>
+    <button id="button5" onclick="score()">Click to see the score evaluation</button>
     <script>
         function button1(){
             console.log('My Information on the Console')
@@ -32,6 +34,34 @@
             console.log('multiplication: ', x * y);
             console.log('division: ', x / y);
             console.log('modulus: ', x % y);     
+        }
+
+        function button3(){
+            console.log('This is the third button');
+            let a = 10;
+            console.log('+= means addition assignment: ', a+=5);
+            console.log('-= means subtraction assignment: ', a-=3);
+            console.log('*= means multiplication assignment: ', a*=2);
+            console.log('/= means division assignment: ', a/=2);
+        }
+
+        // Exerise: Create a function that takes two numbers as arguments and returns their sum.
+        function sum(){
+            let num1 = 5;
+            let num2 = 10;
+            console.log('This is the fourth button');
+            console.log('The first number is: ', num1);
+            console.log('The second number is: ', num2);
+            console.log('The sum of num1 and num2 is: ', num1 + num2);
+        }
+
+        function score(){
+            let score = 75;
+            let passed = score >= 50;
+            let excellent = score >= 90;
+            console.log('This is the fifth button');
+            console.log("passed?", passed);
+            console.log("Excellent?", excellent);
         }
     </script>
 </body>
