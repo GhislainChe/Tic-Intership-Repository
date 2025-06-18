@@ -16,8 +16,11 @@
         <button id="button3" onclick="button3()">Click to see the arithmetic operators</button>
         <button id="button4" onclick="sum()">Click to see the sum of two numbers</button>
         <button id="button5" onclick="score()">Click to see the score evaluation</button>
+        <button id="button6" onclick="basicIf()">Click to see the basic if statement</button>
     </div>
     <script>
+        console.log('Welcome to my console learning page!');
+
         function button1(){
             console.log('My Information on the Console')
             const surname = "Ghislain Che";
@@ -69,7 +72,16 @@
             console.log("Excellent?", excellent);
         }
 
-        
+        function basicIf(){
+            let age = 18;
+            
+            console.log(age)
+            if (age >= 18) {
+                console.log("You are an adult.");
+            } else {
+                console.log("You are a minor.");
+            }
+        }
     </script>
 </body>
 </html>
