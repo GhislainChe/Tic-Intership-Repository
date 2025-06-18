@@ -11,6 +11,13 @@ body{
     justify-content: center;
 }
 
+h3{
+    display: none;
+    font-size: 2em;
+    color: #b5bff7;
+    text-align: center;
+}
+
 h1{
     color: #b5bff7;
     font-size: 2em;
@@ -54,4 +61,25 @@ button{
 
 button:hover{
     background-color: #354fe6;
+}
+
+@media (max-width: 640px) {
+    h1{
+        display: none;
+    }
+    h2{
+        display: none;
+    }
+    p{
+        display: none;
+    }
+    div{
+        display: none;
+    }
+    button{
+        display: none;
+    }
+    h3{
+        display: block;
+    }
 }
