@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghislain Che Javascript day 2</title>
+    <link rel="stylesheet" href="learnjs.css">
+</head>
+<body>
+    <h1>This is My Second Day of Learning JavaScript</h1>
+    <h2>Today i will deepen my understanding in javascript conditional statements</h2>
+    <div>
+        <button id="scoreIf" onclick="scoreIf()">click to seee score in console</button>
+        <button onclick="enterClub()">Click to check if you have acces to the club in the console.</button>
+        <button onclick="nestedIf()">Click to see nested if</button>
+        <button onclick="ternary()">Click to see ternary statement</button>
+        <button onclick="switching()">Click to see the switch statement</button>
+        <button onclick="practice()">Click to see my practice.</button>
+    </div>
+    <script>
+        // let age = 5
+        // if (age > 8) {
+        //     console.log(age)
+        //     console.log('You are becoming old')
+        // }
+        // else {
+        //     console.log (age)
+        //     console.log ('you are still too small')
+        // }
+        function scoreIf(){
+            const score = 99;
+            if (score >= 90){
+                console.log('Your Score is', score)
+                console.log('Grade: A');
+            }
+            else if (score >= 80){
+                console.log('Your score is', score)
+                console.log('Grade: B')
+            }
+            else if (score >= 70) {
+                console.log('Your score is', score)
+                console.log('Grade: C')
+            }
+            else {
+                console.log('Your score is', score)
+                console.log('Failled')
+            }
+        }
+
+        function enterClub(){
+            let age = 20;
+            let hasID = false;
+
+            if (age >= 18 && hasID) {
+                console.log('You have all the requirements')
+                console.log('You can enter the club.');
+            }
+            else {
+                console.log('Access denied.');
+                console.log('You do not have one or all the requirements needed.')
+            }
+        }
+
+        function nestedIf(){
+            let age = 20;
+            let hasTicket = false;
+
+            if (age >= 18){
+                if (hasTicket) {
+                    console.log('You have a ticket')
+                    console.log('Welcome to the concert!');
+                }
+                else{
+                    console.log('Go and buy a ticket you poor man 😅😂🤣')
+                    console.log('You need a ticket.');
+                }
+            }
+            else{
+                console.log("You're too young");
+            }
+        }
+
+        function ternary(){
+            let age = 16;
+            let message = age >= 18 ? "Adult" : "Minor";
+            console.log(message);
+        }
+
+        function switching(){
+            let grade = "B";
+            switch (grade) {
+                case "A":
+                    console.log('Excellent!');
+                    break;
+                case "B":
+                    console.log('Good Job!');
+                    break;
+                case "C":
+                    console.log("You passed.");
+                    break;
+                default:
+                    console.log('Grade not recognised');
+            }
+        }
+
+        // Practice time.
+        function practice(){
+            let userRole = "admin"
+            if (userRole === "admin"){
+                console.log("Access: All areas");
+            }
+            else if (userRole === "Editor") {
+                console.log('Access: content areas');
+            }
+            else if (userRole === "user"){
+                console.log("Access limited");
+            }
+            else {
+                console.log('Access none');
+            }
+        }
+    </script>
+</body>
+</html>
