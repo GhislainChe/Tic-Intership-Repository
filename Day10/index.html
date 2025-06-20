@@ -19,6 +19,7 @@
         <button onclick="oddNumbers()">Click to print odd numbers from 1 to 25</button>
         <!-- <button onclick="arrey1()">Click to activate arrey 1</button> -->
         <button onclick="doWhiele1()">Click to perform the do while loop</button>
+        <button onclick="doWhiele2()">Click to perform the do while loop</button>
     </div>
     <script>
         // Today i am learning about loops in javascript.
@@ -84,6 +85,25 @@
             }
             while (i <= 3);
         }
+
+        // Use case of do while loop (just and example.)
+        function doWhiele2(){
+            let password;
+            do{
+                password = prompt('Enter your password: ');
+            }
+            while (password !== "open123");
+            console.log('Access Granted.');
+        }
+
+
+            let passwords = prompt('Enter your password: .')
+            let passwordss;           
+            do{
+                passwordss = prompt('Enter the password you inputed.: ')
+            }
+            while (passwordss !== passwords)
+            console.log('you seccesfully entered', passwords, 'as your password.');
     </script>
 </body>
 </html>
