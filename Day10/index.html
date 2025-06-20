@@ -12,13 +12,23 @@
     <h2>Click The buttons to see the results in the console</h2>
     <p>Open the console to see the buttons.To open the console,<br> right click on an empty space on the page and select inspect. <br>There now you will see the developer options open <br> in your browser and below you click the console tab.</p>
     <div class="buttons">
-
+        <button onclick="printHellofor()">Click to print Hello 5 Times.</button>
+        <button onclick="printHellowhile()">Click to print Hello 5 Times.</button>
     </div>
     <script>
         // Today i am learning about loops in javascript.
         // The for loop
-        for (let i = 0; i < 5; i++) {
-            consol.log('Hello', i)
+        function printHellofor(){
+            for (let i = 0; i < 5; i++) {
+                console.log('Hello', i)
+            }
+        }
+        function printHellowhile(){
+            let i = 0;
+            while (i < 5){
+                console.log('Hello', i);
+                i++;
+            }
         }
     </script>
 </body>
