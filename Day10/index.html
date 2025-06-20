@@ -14,6 +14,7 @@
     <div class="buttons">
         <button onclick="printHellofor()">Click to print Hello 5 Times.</button>
         <button onclick="printHellowhile()">Click to print Hello 5 Times.</button>
+        <button onclick="oneToTen()">Click to print numbers from 1 to 10.</button>
     </div>
     <script>
         // Today i am learning about loops in javascript.
@@ -23,6 +24,9 @@
                 console.log('Hello', i)
             }
         }
+
+        // The while loop
+        // The while loop will continue to execute as long as the condition is true.
         function printHellowhile(){
             let i = 0;
             while (i < 5){
@@ -30,6 +34,13 @@
                 i++;
             }
         }
+
+        function oneToTen(){
+            for (i = 1; i <= 30; i++){
+                console.log(i);
+            }
+        }
+
     </script>
 </body>
 </html>
