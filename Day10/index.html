@@ -14,7 +14,7 @@
     <div class="buttons">
         <button onclick="printHellofor()">Click to print Hello 5 Times.</button>
         <button onclick="printHellowhile()">Click to print Hello 5 Times.</button>
-        <button onclick="oneToTen()">Click to print numbers from 1 to 10.</button>
+        <button onclick="onetotenwhile()">Click to print numbers from 1 to 10.</button>
         <button onclick="evenNumbers()">Click to print even numbers from 2 to 25.</button>
         <button onclick="oddNumbers()">Click to print odd numbers from 1 to 25
     </div>
@@ -43,6 +43,14 @@
             }
         }
 
+        function onetotenwhile(){
+            let i = 1;
+            while(i <= 10) {
+                console.log(i);
+                i++;
+            }
+        }
+
         function evenNumbers(){
             for(i = 2; i <= 25; i += 2){
                 console.log(i);
@@ -54,6 +62,8 @@
                 console.log(i);
             }
         }
+
+        // looping an arrey
 
     </script>
 </body>
