@@ -15,6 +15,8 @@
         <button onclick="printHellofor()">Click to print Hello 5 Times.</button>
         <button onclick="printHellowhile()">Click to print Hello 5 Times.</button>
         <button onclick="oneToTen()">Click to print numbers from 1 to 10.</button>
+        <button onclick="evenNumbers()">Click to print even numbers from 2 to 25.</button>
+        <button onclick="oddNumbers()">Click to print odd numbers from 1 to 25
     </div>
     <script>
         // Today i am learning about loops in javascript.
@@ -37,6 +39,18 @@
 
         function oneToTen(){
             for (i = 1; i <= 30; i++){
+                console.log(i);
+            }
+        }
+
+        function evenNumbers(){
+            for(i = 2; i <= 25; i += 2){
+                console.log(i);
+            }
+        }
+
+        function oddNumbers(){
+            for(i = 1; i <= 25; i += 2){
                 console.log(i);
             }
         }
