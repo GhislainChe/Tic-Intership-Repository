@@ -13,11 +13,12 @@
     <p>Open the console to see the buttons.To open the console,<br> right click on an empty space on the page and select inspect. <br>There now you will see the developer options open <br> in your browser and below you click the console tab.</p>
     <div class="buttons">
         <button onclick="printHellofor()">Click to print Hello 5 Times.</button>
-        <button onclick="printHellowhile()">Click to print Hello 5 Times.</button>
+        <!-- <button onclick="printHellowhile()">Click to print Hello 5 Times.</button> -->
         <button onclick="onetotenwhile()">Click to print numbers from 1 to 10.</button>
         <button onclick="evenNumbers()">Click to print even numbers from 2 to 25.</button>
         <button onclick="oddNumbers()">Click to print odd numbers from 1 to 25</button>
-        <button onclick="arrey1()">Click to activate arrey 1</button>
+        <!-- <button onclick="arrey1()">Click to activate arrey 1</button> -->
+        <button onclick="doWhiele1()">Click to perform the do while loop</button>
     </div>
     <script>
         // Today i am learning about loops in javascript.
@@ -69,11 +70,20 @@
         function arrey1(){
             let fruits = ['Apple', 'Banana', 'Orange'];
             console.log(fruits)
-            for (i = 0; i < fruits.lenght; i++){
+            for (let i = 0; i < fruits.lenght; i++){
                 console.log(fruits[i]);
             }
         }
 
+        // The Do while loop
+        function doWhiele1(){
+            let i = 1;
+            do {
+                console.log("Count is:", i);
+                i++;
+            }
+            while (i <= 3);
+        }
     </script>
 </body>
 </html>
