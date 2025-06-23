@@ -20,6 +20,7 @@
         <!-- <button onclick="arrey1()">Click to activate arrey 1</button> -->
         <button onclick="doWhiele1()">Click to perform the do while loop</button>
         <button onclick="doWhiele2()">Click to perform the do while loop</button>
+        <button onclick="alltopiceg1()">Click to see my mini work that i did on all the topic we have been working on</button>
     </div>
     <script>
         // Today i am learning about loops in javascript.
@@ -104,6 +105,34 @@
             }
             while (passwordss !== passwords)
             console.log('you seccesfully entered', passwords, 'as your password.');
+
+
+        function alltopiceg1(){
+            // building a quiz app .
+            //loop through answers.
+            //show total score at the end.
+            let qestions = [
+                { qustion: "What is 2 + 2?", answer: "4"},
+                { qustion: "What is the Capital of Cameroon?", answer: "Yaounde"},
+                { qustion: "Is JavaScript Easy?", answer: "No"}
+            ];
+            let score = 0;
+            console.log("Total Questions: ", qestions.length);
+
+            for (let i = 0; i < qestions.lenght; i++){
+                let userAnswer = prompt(qestions[i].qustion);
+
+                if (userAnswer.toLowerCase() === qestions[i].answer.toLowerCase()){
+                    console.log("Correct");
+                    score++;
+                }
+                else{
+                    console.log("Wrong");
+                }
+            }
+
+            console.log("You got", score, "out of", qestions.lenght);
+        }
     </script>
 </body>
 </html>

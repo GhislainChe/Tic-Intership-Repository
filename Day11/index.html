@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revision of the for loop</title>
+    <link rel="stylesheet" href="learnjs.css">
+</head>
+<body>
+
+    <h3>This won't show on this device because you need a laptop to view this and use the console in the web browser</h3>
+    <h1>This is My page with Buttons that functions <br>in the console when clicked.</h1>
+    <h2>Click The buttons to see the results in the console</h2>
+    <p>Open the console to see the buttons.To open the console,<br> right click on an empty space on the page and select inspect. <br>There now you will see the developer options open <br> in your browser and below you click the console tab.</p>
+    <div class="buttons">
+        <button onclick="quiz()">Click to take the quiz.</button>
+        <button onclick="studentProfile()">Ghislain's skills.</button>
+        <button onclick="studentGrades()"></button> 
+    <script>
+        // for (i = 0; i < 5; i++){
+        //      console.log('Hello', i);
+        // }
+    //    let i = 0;
+    //    while (i < 10){
+    //         console.log('hello', i);
+    //         i++;
+    //    }
+
+            // for (i = 2; i < 20; i+=2){
+            //     console.log('the next even number is ', i)
+            // }
+
+            // let i = 2;
+            // while(i < 20){
+            //     console.log(i)
+            //     i += 2;
+            // }
+
+        
+            // let fruits = ['Apple', 'Banana', 'Orange'];
+            // console.log(fruits)
+            // let len = fruits.length
+            // for (i = 0; i < len; i++){
+            //     console.log(fruits[i]);
+            // }
+
+            // let password
+            // do{
+            //     password = prompt('Enter your password: ')
+            // }
+            // while (password !== 'hello')
+            // console.log('Ghislain is a GOAT')
+        function quiz(){
+            let questions = [
+                {
+                    question: "What is 2 + 2?",
+                    answer: "4" 
+                },
+              { question: "What is the capital of Cameroon?", answer: "Yaounde" },
+              { question: "Is JavaScript fun?", answer: "yes" }
+            ];
+
+            let score = 0;
+
+            console.log("Total Questions:", questions.length);  // Should say 3
+
+            for (let i = 0; i < questions.length; i++) {
+              let userAnswer = prompt(questions[i].question);
+            
+              if (userAnswer.toLowerCase() === questions[i].answer.toLowerCase()) {
+                console.log("Correct");
+                score++;
+              } else {
+                console.log("Wrong");
+              }
+            }
+
+            console.log("You got", score, "out of", questions.length);
+        }
+
+        function studentProfile(){
+
+            console.log('This program prompts you to enter your name age and skill. then displays your skills')
+            console.log('If your skills are greater that 4 you will have a felicitation message.')
+            
+            let student = {
+                name: prompt('Enter your name: '),
+                age: prompt('Enter your age'),
+                skills: []
+            };
+
+            let skillCount = parseInt(prompt('How many skills do you have?: '));
+            for(let i = 0; i < skillCount; i++){
+                let skill = prompt('Enter skills ${i + 1}:');
+                student.skills.push(skill);
+            }
+        
+            for (i = 0; i < student.skills.length; i++){
+                console.log(student.name, 'knows', student.skills[i])
+            }
+            let know = student.skills.length
+            if (know > 3){
+                console.log('Wow', student.name, 'is multi talented!')
+            } 
+        }
+
+        function studentGrades(){
+            grdes[
+                {
+                    subject,
+                    grade
+                }
+            ]
+            subjects = prompt('How many subjects do you want to enter: ');
+            console.log('You have entered ', subjects.lenght, 'subject(s)');
+            for(i = 0; i < subjects.lenght; i++){
+                let subs = prompt('Enter the subject ${i + 1}');
+                let grad = prompt('enter the grade ${i + 1}');
+                grdes[i].subject.push(subs);
+                grdes[i].grade.push(grad);
+            }
+
+        }
+        
+    </script>   
+</body>
+</html>
