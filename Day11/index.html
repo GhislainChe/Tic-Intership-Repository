@@ -105,19 +105,28 @@
         }
 
         function studentGrades(){
-            grdes[
-                {
-                    subject,
-                    grade
-                }
-            ]
-            subjects = prompt('How many subjects do you want to enter: ');
-            console.log('You have entered ', subjects.lenght, 'subject(s)');
-            for(i = 0; i < subjects.lenght; i++){
+            console.log('hello')
+            let grdes = []
+            let subjects = parseInt(prompt('How many subjects do you want to enter: '));
+            console.log('You have entered ', subjects, 'subject(s)');
+            for(let i = 0; i < subjects; i++){
                 let subs = prompt('Enter the subject ${i + 1}');
                 let grad = prompt('enter the grade ${i + 1}');
-                grdes[i].subject.push(subs);
-                grdes[i].grade.push(grad);
+                grdes.push({subject: subs, grades: grad});
+            }
+            for (let i = 0; i < grdes.lenght; i++){
+                let subject = grdes[i].subject;
+                let score = grdes[i].grade;
+                let letter = '';
+
+                if (score >= 90) letter = 'A';
+                else if (score >= 80) letter = "B";
+                else if (score >= 70) letter = "C";
+                else if (score >= 60) letter = "D";
+                else if (score >= 50) letter = "E";
+                else letter = "F"
+
+                console.log("You scored ", score, "in", subject, "- Grade", letter);
             }
 
         }
