@@ -150,7 +150,7 @@
             let name = prompt('What is your name: ')
             let choice = prompt('Welcome to my questions logic with javascript. Do you want to start the quiz: (yes or no) ')
             let yes = "Yes"
-            if (choice.toLowerCase === yes.toLowerCase){
+            if (choice.toLowerCase() === yes.toLowerCase()){
                     console.log(name, "You took the challenge to take the quiz.")
                     console.log(`There are ${questions.length} questions in total. Answer all the questions and be graded on 3`)
                     console.log("But Beware!, If you fail one question, you will be insulted and don't blame")
@@ -170,19 +170,21 @@
 
                 console.log('You scored', score, "on", questions.length)
                 if (score < 3){
-                    console.log(`You have tried. you have ${score} does not mean that you have sense`)
+                    console.log(`You have tried. you have ${score} does not mean that you have sense`);
                 }
                 else if(score < 2){
                     console.log("What a shame nd you're proud to say that you do intership at TiC foundation. your level is form 2.")
                 }
                 else{
-                    console.log("Yeah let me accept that you have small sense but not more than Ghislain.")
+                    console.log("Yeah let me accept that you have small sense but not more than Ghislain.");
                 }
             }
             else{
                 console.log(`Thanks for refusing to take my quiz. because i know that all ${name} dont have sense`)
             }
         }
+
+        
         
     </script>   
 </body>
