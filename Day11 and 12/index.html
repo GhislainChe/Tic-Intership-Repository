@@ -151,6 +151,9 @@
             let choice = prompt('Welcome to my questions logic with javascript. Do you want to start the quiz: (yes or no) ')
             let yes = "Yes"
             if (choice.toLowerCase === yes.toLowerCase){
+                    console.log(name, "You took the challenge to take the quiz.")
+                    console.log(`There are ${questions.length} questions in total. Answer all the questions and be graded on 3`)
+                    console.log("But Beware!, If you fail one question, you will be insulted and don't blame")
                     let score = 0;
                     for (let i = 0; i < questions.length; i++){
                     let quest = prompt(questions[i].question);
@@ -160,6 +163,7 @@
                     }
                     else{
                         console.log(quest, "is the wrong answer");
+                        
                     }
                 }
 
