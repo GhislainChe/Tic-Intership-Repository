@@ -163,11 +163,21 @@
                     }
                     else{
                         console.log(quest, "is the wrong answer");
-                        
+                        console.log(name, ', you are a very foolish child. the correct answer is', questions[i].answer)
+
                     }
                 }
 
                 console.log('You scored', score, "on", questions.length)
+                if (score < 3){
+                    console.log(`You have tried. you have ${score} does not mean that you have sense`)
+                }
+                else if(score < 2){
+                    console.log("What a shame nd you're proud to say that you do intership at TiC foundation. your level is form 2.")
+                }
+                else{
+                    console.log("Yeah let me accept that you have small sense but not more than Ghislain.")
+                }
             }
             else{
                 console.log(`Thanks for refusing to take my quiz. because i know that all ${name} dont have sense`)
