@@ -50,33 +50,33 @@
             // }
             // while (password !== 'hello')
             // console.log('Ghislain is a GOAT')
-        function quiz(){
-            let questions = [
-                {
-                    question: "What is 2 + 2?",
-                    answer: "4" 
-                },
-              { question: "What is the capital of Cameroon?", answer: "Yaounde" },
-              { question: "Is JavaScript fun?", answer: "yes" }
-            ];
+        // function quiz(){
+        //     let questions = [
+        //         {
+        //             question: "What is 2 + 2?",
+        //             answer: "4" 
+        //         },
+        //       { question: "What is the capital of Cameroon?", answer: "Yaounde" },
+        //       { question: "Is JavaScript fun?", answer: "yes" }
+        //     ];
 
-            let score = 0;
+        //     let score = 0;
 
-            console.log("Total Questions:", questions.length);
+        //     console.log("Total Questions:", questions.length);
 
-            for (let i = 0; i < questions.length; i++) {
-              let userAnswer = prompt(questions[i].question);
+        //     for (let i = 0; i < questions.length; i++) {
+        //       let userAnswer = prompt(questions[i].question);
             
-              if (userAnswer.toLowerCase() === questions[i].answer.toLowerCase()) {
-                console.log("Correct");
-                score++;
-              } else {
-                console.log("Wrong");
-              }
-            }
+        //       if (userAnswer.toLowerCase() === questions[i].answer.toLowerCase()) {
+        //         console.log("Correct");
+        //         score++;
+        //       } else {
+        //         console.log("Wrong");
+        //       }
+        //     }
 
-            console.log("You got", score, "out of", questions.length);
-        }
+        //     console.log("You got", score, "out of", questions.length);
+        // }
 
         function studentProfile(){
 
@@ -91,7 +91,7 @@
 
             let skillCount = parseInt(prompt('How many skills do you have?: '));
             for(let i = 0; i < skillCount; i++){
-                let skill = prompt('Enter skills ${i + 1}:');
+                let skill = prompt(`Enter skills ${i + 1}:`);
                 student.skills.push(skill);
             }
         
@@ -110,34 +110,49 @@
             let subjects = parseInt(prompt('How many subjects do you want to enter: '));
             console.log('You have entered ', subjects, 'subject(s)');
             for(let i = 0; i < subjects; i++){
-                let subs = prompt('Enter the subject ${i + 1}');
-                let grad = parseINT(prompt('enter the grade for ${subs}'));
-                grdes.push({subject: subs, grades: grad});
+                let subs = prompt(`Enter the subject ${i + 1}`);
+                let grad = parseInt(prompt(`enter the grade for ${subs}`));
+                grdes.push({subject: subs, grade: grad});
             }
-            let totalScore = 0;
-            for (let i = 0; i < grdes.lenght; i++){
+            let total = 0;
+            for (let i = 0; i < grdes.length; i++){
                 let subject = grdes[i].subject;
                 let score = grdes[i].grade;
+                total += score;
                 let letter = '';
 
-                if (score >= 90){
-                    console.log(letter = 'A')
-                }  else if (score >= 80) {
-                    console.log(letter = 'B')
-                } else if (score >= 70) {
-                    console.log(letter = 'C')
-                }
-                else if (score >= 60) {
-                    console.log(letter = 'D')
-                }
-                else if (score >= 50) {
-                    console,log(letter = 'E')
-                }
+                if (score >= 90) letter = 'A';
+                else if (score >= 80) letter = 'B';
+                else if (score >= 70) letter = 'C';
+                else if (score >= 60) letter = 'D';
+                else if (score >= 50) letter = 'E';
                 else letter = "F";
 
                 console.log("You scored ", score, "in", subject, "- Grade", letter);
             }
 
+            let average = total / grdes.length;
+            console.log("Your average is:", average);
+
+            if (average > 75){
+                console.log("Excellent performance!");
+            }
+
+        }
+
+        function quiz() {
+            let questions = [
+                {question: "What is 2 + 2", answer: "4"},
+                {question: "is Javascript easy", answer: "no"},
+                {question: "What is my name", answer: "ghislain"}
+            ]
+
+            for (let i = 0; i < questions.length; i++){
+                let quest = prompt(questions[i].question)
+                if (){
+                    
+                }
+            }
         }
         
     </script>   
