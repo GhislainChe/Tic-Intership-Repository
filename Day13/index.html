@@ -74,46 +74,54 @@
 
 
         function areas(){
-            function rectangle(len, wid){
-                len = parseFloat(prompt("Enter the lenght of the Rectangle"))
-                wid = parseFloat(prompt("Enter the width of the rectangle"))
+            function rectangle(){
+                let len = parseFloat(prompt("Enter the lenght of the Rectangle"))
+                let wid = parseFloat(prompt("Enter the width of the rectangle"))
                 return len*wid;
             }
 
-            function square(side){
-                side = parseFloat(prompt("Enter the lenght and width of the square"))
+            function square(){
+                let side = parseFloat(prompt("Enter the lenght and width of the square"))
                 return side*side;
             }
 
-            function triangle(bese, height){
-                bese = parseFloat(prompt("Enter the base of the triantangle"))
-                height = parseFloat(prompt("Enter the height of the triangle"))
-                return base*height;
+            function triangle(){
+                let bese = parseFloat(prompt("Enter the base of the triantangle"))
+                let height = parseFloat(prompt("Enter the height of the triangle"))
+                return (bese*height)/2;
             }
 
-            function circle(rad){
-                rad = parseFloat(prompt('Enter the radius of the circle: '))
+            function circle(){
+                let rad = parseFloat(prompt('Enter the radius of the circle: '))
                 return Math.PI*rad*rad;
             }
 
             console.log('In this program, we can calculate the area of 4 shapes.')
             let shapes = ["Square", "Rectangle", "Triangle", "Circle"]
             for (i = 0; i < shapes.length; i++){
-                console.log[i];
+                console.log(shapes[i]);
             }
-            let choseShape = prompt('Enter the shape you want to calculate the area: ')
-            if (choseShape.toLowerCase == shapes[0].toLowerCase){
-                square();
-                console.log(side*side)
+            let choseShape = prompt('Enter the shape found in the list if you want to calculate the area: ')
+            if (choseShape.toLowerCase() == shapes[0].toLowerCase()){
+                let result = square();
+                console.log("The area of square is: ", result)
             }
-            else if (choseShape.toLowerCase == shapes[1].toLowerCase){
+            else if (choseShape.toLowerCase() == shapes[1].toLowerCase()){
                 rectangle(len, wid);
+                let result = rectangle();
+                console.log("The area of rectangle is: ", result)
             }
-            else if (choseShape.toLowerCase == shapes[2].toLowerCase){
-                triangle(bese, height);
+            else if (choseShape.toLowerCase() == shapes[2].toLowerCase()){
+                let result = triangle();
+                console.log("The area of triangle is: ", result);
             }
-            else if (choseShape.toLowerCase == shapes[3].toLowerCase){
-                circle(rad);
+            else if (choseShape.toLowerCase() == shapes[3].toLowerCase()){
+                let result = circle();
+                console.log("The area of circle is: ", result);
+            }
+            else{
+                alert('Next time you have to chose a shape found in the list provided to be able to calculate the area.')
+                console.log("You must enter a shape to be able to calculate the area")
             }
         }
         
