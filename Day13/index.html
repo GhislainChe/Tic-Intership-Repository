@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Loops and functions</title>
+    <link rel="stylesheet" href="learnjs.css">
+</head>
+<body>
+    <h3>This won't show on this device because you need a laptop to view this and use the console in the web browser</h3>
+    <h1>This is My page with Buttons that functions <br>in the console when clicked.</h1>
+    <h2>Click The buttons to see the results in the console</h2>
+    <p>Open the console to see the buttons.To open the console,<br> right click on an empty space on the page and select inspect. <br>There now you will see the developer options open <br> in your browser and below you click the console tab.</p>
+    <div class="buttons">
+        <button onclick="toSee()">Click to see what is on the arrey.</button>
+        <button onclick="toPush()">Click to add yellow to the arrey</button>
+        <button onclick="toPop()">Click to remove the last item</button>
+        <button onclick="toUnshift()">Click to add orange at the beggining</button>
+    </div> 
+    <script>
+        let colors = ["red", "green", "blue"]
+        function toSee(){
+            for (let color of colors){
+                console.log(color)
+            }
+        }
+
+        function toPush(){
+            colors.push("Yellow");
+            console.log(colors)
+            for (let i = 0; i < colors.length; i++){
+                console.log(colors[i])
+            }
+        }
+
+        function toPop(){
+            colors.pop();
+            console.log(colors)
+            for (let i = 0; i < colors.length; i++){
+                console.log(colors[i])
+            }
+        }
+
+        function toUnshift(){
+            colors.unshift("Orange");
+            console.log(colors)
+            for (let i = 0; i < colors.length; i++){
+                console.log(colors[i])
+            }
+        }
+        
+    </script>
+</body>
+</html>
