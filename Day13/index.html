@@ -16,6 +16,7 @@
         <button onclick="toPush()">Click to add yellow to the arrey</button>
         <button onclick="toPop()">Click to remove the last item</button>
         <button onclick="toUnshift()">Click to add orange at the beggining</button>
+        <button onclick="loopChallenge()">My loop challenge</button>
     </div> 
     <script>
         let colors = ["red", "green", "blue"]
@@ -46,6 +47,18 @@
             console.log(colors)
             for (let i = 0; i < colors.length; i++){
                 console.log(colors[i])
+            }
+        }
+
+        function loopChallenge(){
+            let empty = [];
+            // fruits = prompt("Enter your favourite fruit: ")
+            for (let i = 0; i < 3; i++){
+              fruits = prompt(`Enter your favourite fruits ${i + 1}: `)
+              empty.push(fruits);  
+            }
+            for (let i = 0; i < empty.length; i++){
+                console.log(empty[i]);
             }
         }
         
