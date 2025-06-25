@@ -12,64 +12,110 @@
     <h2>Click The buttons to see the results in the console</h2>
     <p>Open the console to see the buttons.To open the console,<br> right click on an empty space on the page and select inspect. <br>There now you will see the developer options open <br> in your browser and below you click the console tab.</p>
     <div class="buttons">
-        <button onclick="toSee()">Click to see what is on the arrey.</button>
+        <!-- <button onclick="toSee()">Click to see what is on the arrey.</button>
         <button onclick="toPush()">Click to add yellow to the arrey</button>
         <button onclick="toPop()">Click to remove the last item</button>
         <button onclick="toUnshift()">Click to add orange at the beggining</button>
-        <button onclick="loopChallenge()">My loop challenge</button>
+        <button onclick="loopChallenge()">My loop challenge</button> -->
+        <button onclick="areas()">click to calculate</button>
     </div> 
     <script>
-        let colors = ["red", "green", "blue"]
-        function toSee(){
-            for (let color of colors){
-                console.log(color)
-            }
-        }
+        // let colors = ["red", "green", "blue"]
+        // function toSee(){
+        //     for (let color of colors){
+        //         console.log(color)
+        //     }
+        // }
 
-        function toPush(){
-            colors.push("Yellow");
-            console.log(colors)
-            for (let i = 0; i < colors.length; i++){
-                console.log(colors[i])
-            }
-        }
+        // function toPush(){
+        //     colors.push("Yellow");
+        //     console.log(colors)
+        //     for (let i = 0; i < colors.length; i++){
+        //         console.log(colors[i])
+        //     }
+        // }
 
-        function toPop(){
-            colors.pop();
-            console.log(colors)
-            for (let i = 0; i < colors.length; i++){
-                console.log(colors[i])
-            }
-        }
+        // function toPop(){
+        //     colors.pop();
+        //     console.log(colors)
+        //     for (let i = 0; i < colors.length; i++){
+        //         console.log(colors[i])
+        //     }
+        // }
 
-        function toUnshift(){
-            colors.unshift("Orange");
-            console.log(colors)
-            for (let i = 0; i < colors.length; i++){
-                console.log(colors[i])
-            }
-        }
+        // function toUnshift(){
+        //     colors.unshift("Orange");
+        //     console.log(colors)
+        //     for (let i = 0; i < colors.length; i++){
+        //         console.log(colors[i])
+        //     }
+        // }
 
-        function loopChallenge(){
-            let empty = [];
-            for (let i = 0; i < 3; i++){
-              let fruits = prompt(`Enter your favourite fruits ${i + 1}: `)
-              empty.push(fruits);  
-            }
-            for (let i = 0; i < empty.length; i++){
-                console.log(empty[i]);
-            }
-        }
+        // function loopChallenge(){
+        //     let empty = [];
+        //     for (let i = 0; i < 3; i++){
+        //       let fruits = prompt(`Enter your favourite fruits ${i + 1}: `)
+        //       empty.push(fruits);  
+        //     }
+        //     for (let i = 0; i < empty.length; i++){
+        //         console.log(empty[i]);
+        //     }
+        // }
 
-        function doubleIt(a){
-            return a*a;
+        // function doubleIt(a){
+        //     return a*a;
+        // }
+        // result = doubleIt(10)
+        // console.log(result)
+        // answer = doubleIt(2)
+        // console.log(answer)
+        // correct = doubleIt(4)
+        // console.log(correct)
+
+
+        function areas(){
+            function rectangle(len, wid){
+                len = parseFloat(prompt("Enter the lenght of the Rectangle"))
+                wid = parseFloat(prompt("Enter the width of the rectangle"))
+                return len*wid;
+            }
+
+            function square(side){
+                side = parseFloat(prompt("Enter the lenght and width of the square"))
+                return side*side;
+            }
+
+            function triangle(bese, height){
+                bese = parseFloat(prompt("Enter the base of the triantangle"))
+                height = parseFloat(prompt("Enter the height of the triangle"))
+                return base*height;
+            }
+
+            function circle(rad){
+                rad = parseFloat(prompt('Enter the radius of the circle: '))
+                return Math.PI*rad*rad;
+            }
+
+            console.log('In this program, we can calculate the area of 4 shapes.')
+            let shapes = ["Square", "Rectangle", "Triangle", "Circle"]
+            for (i = 0; i < shapes.length; i++){
+                console.log[i];
+            }
+            let choseShape = prompt('Enter the shape you want to calculate the area: ')
+            if (choseShape.toLowerCase == shapes[0].toLowerCase){
+                square();
+                console.log(side*side)
+            }
+            else if (choseShape.toLowerCase == shapes[1].toLowerCase){
+                rectangle(len, wid);
+            }
+            else if (choseShape.toLowerCase == shapes[2].toLowerCase){
+                triangle(bese, height);
+            }
+            else if (choseShape.toLowerCase == shapes[3].toLowerCase){
+                circle(rad);
+            }
         }
-        result = doubleIt(10)
-        console.log(result)
-        answer = doubleIt(2)
-        console.log(answer)
-        correct = doubleIt(4)
-        console.log(correct)
         
     </script>
 </body>
