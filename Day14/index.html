@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Number Guessing</title>
+    <link rel="stylesheet" href="learnjs.css">
 </head>
 <body>
     <h3>This won't show on this device because you need a laptop to view this and use the console in the web browser</h3>
@@ -11,7 +12,37 @@
     <h2>Click The buttons to see the results in the console</h2>
     <p>Open the console to see the buttons.To open the console,<br> right click on an empty space on the page and select inspect. <br>There now you will see the developer options open <br> in your browser and below you click the console tab.</p>
     <div class="buttons">
-        
+        <button onclick="numberGame()">Click to play the number game.</button>
     </div>
+    <script>
+        function numberGame(){
+            let secretNumber = Math.floor(Math.random()*100) + 1;
+            while(true){
+                let userGuess = parseInt(prompt('Enter a number between 1 to 100'))
+                if(userGuess != parseInt){
+                    alert( `You must enter a number ${userGuess} is not a number;`)
+                    break;
+                }
+                else{
+                    if (userGuess == secretNumber){
+                        console.log(`You got me right there my input was ${secretNumber}`)
+                    }
+                    else if(userGuess > secretNumber){
+                        console.log(`Your input was higher than mine. mine was ${secretNumber} and yours was ${userGuess}`);
+                        console.log("Better luck next time");
+                    }
+                    else(userGuess < secretNumber){
+                        console.log(`Your input was lower than mine. mine was ${secretNumber} and yours was ${userGuess}`)
+                        console.log('Better luck next time')
+                    }
+                    let cont = prompt('Do you want to continue')
+                    if(cont.toLowerCase !== "yes"){
+                        break;
+                    }
+                }
+
+            }
+        }
+    </script>
 </body>
 </html>
