@@ -93,18 +93,20 @@
             }
 
             function triangle(){
-                console.log("You have chose a triangle")
-                let bese = parseFloat(prompt("Enter the base of the triantangle"))
-                console.log(`The base of the triangle is ${bese}`)
-                let height = parseFloat(prompt("Enter the height of the triangle"))
-                console.log(`The height of the triangle is ${height}`)
+                console.log("You have chose a triangle");
+                let bese = parseFloat(prompt("Enter the base of the triantangle"));
+                console.log(`The base of the triangle is ${bese}`);
+                let height = parseFloat(prompt("Enter the height of the triangle"));
+                console.log(`The height of the triangle is ${height}`);
+                console.log('The formular to calculate the area of the triangle is (base * height)/2');
                 return (bese*height)/2;
             }
 
             function circle(){
-                console.log("You have chose a circle")
-                let rad = parseFloat(prompt('Enter the radius of the circle: '))
-                console.log(`The radius of the circle is ${rad}`)
+                console.log("You have chose a circle");
+                let rad = parseFloat(prompt('Enter the radius of the circle: '));
+                console.log(`The radius of the circle is ${rad}`);
+                console.log('The formlar to calculate the area of a circle is pi*ra*ra')
                 return Math.PI*rad*rad;
             }
 
@@ -121,7 +123,6 @@
                 console.log("The area of square is: ", result)
             }
             else if (choseShape.toLowerCase() == shapes[1].toLowerCase()){
-                rectangle(len, wid);
                 let result = rectangle();
                 console.log("The area of rectangle is: ", result)
             }
