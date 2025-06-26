@@ -7,7 +7,7 @@
     <style>
         .team-grid {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr auto;
           gap: 1rem;
           padding: 2rem;
           background-color: white;
@@ -17,7 +17,6 @@
           height: 100px;
         }
 
-        /* Colors */
         .black {
           background-color: black;
         }
@@ -38,26 +37,22 @@
           grid-row: 3;
         }
 
-        .bl2 {
-          width: 80%;
-          justify-self: end;
-        }
 
        
 
     </style>
 </head>
 <body>
-    <div class="team-grid">
-        <div class="dox black b1"></div>
-        <div class="dox blue bl1"></div>
+    <div class="grid-container">
+  <div class="dox black b1"></div>
+  <div class="dox blue bl1"></div>
 
-        <div class="dox black b2"></div>
-        <div class="dox blue bl2 small"></div>
+  <div class="dox black b2"></div>
+  <div class="dox blue bl2 small"></div>
 
-        <div class="dox black b3"></div>
-        <div class="dox blue bl3"></div>
-    </div>
+  <div class="dox black b3"></div>
+  <div class="dox blue bl3"></div>
+</div>
 
 </body>
 </html>
