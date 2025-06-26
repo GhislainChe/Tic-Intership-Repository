@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .team-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          /* grid-template-rows: repeat(3, 1fr); */
+          gap: 1rem;
+          padding: 2rem;
+        }
+
+        /* General box styles */
+        .dox {
+          height: 100px;
+        }
+        
+        /* Colors */
+        .black {
+          background-color: black;
+        }
+        .blue {
+          background-color: blue;
+        }
+        
+        .row1 {
+          grid-column: span 2;
+          width: 70%; 
+        }
+
+        .row2 {
+          grid-column: span 1; 
+          width: 30%;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div class="team-grid">
+        <div class="dox black row1"></div>
+        <div class="dox blue row2"></div>
+
+        <div class="dox black row2"></div>
+        <div class="dox blue row1 small"></div>
+
+        <div class="dox black row1"></div>
+        <div class="dox blue row2"></div>
+    </div>
+
+</body>
+</html>
