@@ -16,9 +16,9 @@
     </div>
     <script>
         function numberGame(){
-            let secretNumber = Math.floor(Math.random()*100) + 1;
             console.log('Welcome to my number guessing game')
             while(true){
+                let secretNumber = Math.floor(Math.random()*100) + 1;
                 let userGuess = parseInt(prompt('Enter a number between 1 to 100'))
                 if (isNaN(userGuess)) {
                   alert(`You must enter a number. What you entered is not a number.`);
@@ -42,8 +42,8 @@
                         console.log('Better luck next time')
                         let cont = prompt('Do you want to continue')
                         if(cont.toLowerCase() !== "yes"){
-                        break;
-                    }
+                            break;
+                        }
                     }  
                 }
             }
