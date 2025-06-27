@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="learnjs.css">
+</head>
+<body>
+    <h3>This won't show on this device because you need a laptop to view this and use the console in the web browser</h3>
+    <h1>This is My page with Buttons that functions <br>in the console when clicked.</h1>
+    <h2>Click The buttons to see the results in the console</h2>
+    <p>Open the console to see the buttons.To open the console,<br> right click on an empty space on the page and select inspect. <br>There now you will see the developer options open <br> in your browser and below you click the console tab.</p>
+    <div class="buttons">
+        <button onclick="shoppingCart()">Click to start shopping</button>
+    </div>
+    <script>
+        function shoppingCart(){
+            let cartItems = [
+                {name: "Phone", price: 100, qtyinstock: 15},
+                {name: "computers", price: 300, qtyinstock: 10},
+                {name: "PS5", price: 700, qtyinstock: 2},
+                {name: "earpods", price: 150, qtyinstock: 20},
+                {name: "Televisions", price: 500, qtyinstock: 6},
+            ]
+            console.log("Welcome to the Home accesories Store for all your electronic Gadgets")
+            for(let i = 0; i < cartItems.length; i++){
+                console.log(cartItems[i])
+            }
+
+        }
+    </script>
+</body>
+</html
