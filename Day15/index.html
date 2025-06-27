@@ -26,10 +26,30 @@
             alert('view the catalog in the console. Make sure you read everything.')
             console.log("Welcome to the Home accesories Store for all your electronic Gadgets")
             for(let i = 0; i < cartItems.length; i++){
-                console.log(`we have ${cartItems[i].name}. It cost ${cartItems[i].price}$ per unit. Quantity is stock ${cartItems[i].qtyinstock}`)
+                console.log(`we have ${cartItems[i].name}. It cost ${cartItems[i].price}$ per unit. Quantity in stock ${cartItems[i].qtyinstock}`)
             }
             alert("i'm sure you're here to buy one of these items. select an item from the catalog given to you.")
             
+            let numberOfItems = parseInt(prompt("How many category of product do you want to buy. out of 5"))
+            if(numberOfItems > 5){
+                alert("We have just 5 caategory of product in this store. You can't buy more than 5 but as the store keeps on growing we will have more products.")
+                console.log('please dont try to buy more than 5 product category')
+            } 
+            else if(isNaN(numberOfItems)){
+                alert("please enter a number. That is not a number.")
+            }
+            else if(numberOfItems > 0 && numberOfItems < 6){
+                console.log('You have chosed to buy', numberOfItems, 'items')
+                let description = ["1", "2", "3", "4", "5"]
+                for(let i = 0; i < description.length && i < cartItems.length; i++){
+                    console.log(`${description[i]} is for ${cartItems[i].name}`)
+                }
+                alert("Chose from 1 to 5")
+                console.log("Chose from 1 to 5")
+                for (i = 0; i < numberOfItems; i++){
+
+                }
+            }
 
         }
     </script>
