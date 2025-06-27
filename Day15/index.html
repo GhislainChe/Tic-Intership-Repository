@@ -23,10 +23,13 @@
                 {name: "earpods", price: 150, qtyinstock: 20},
                 {name: "Televisions", price: 500, qtyinstock: 6},
             ]
+            alert('view the catalog in the console. Make sure you read everything.')
             console.log("Welcome to the Home accesories Store for all your electronic Gadgets")
             for(let i = 0; i < cartItems.length; i++){
-                console.log(cartItems[i])
+                console.log(`we have ${cartItems[i].name}. It cost ${cartItems[i].price}$ per unit. Quantity is stock ${cartItems[i].qtyinstock}`)
             }
+            alert("i'm sure you're here to buy one of these items. select an item from the catalog given to you.")
+            
 
         }
     </script>
