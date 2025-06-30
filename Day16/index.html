@@ -6,18 +6,18 @@
     <title>Starting to Learn </title>
 </head>
 <body>
-    <h1 id="title">Ghislain Che the Great.</h1>
-    <h2 id="demo">This is a heading</h2>
-    <button onclick="changeTitle()">click</button>
-    <button onclick="changeTitle2()">click 2</button>
+    <h1>Click Counter</h1>
+    <p id="display">You have 0 times</p>
+    <button id="clickBtn">Click me!</button>
     <script>
-        function changeTitle() {
-            document.getElementById("title").innerText = "change the title";
+        let count = 0
+        let display = document.getElementById("display");
+        let button = document.getElementById("clickBtn");
 
-        }
-        function changeTitle2() {
-            document.getElementById("title").innerText = "Ghislain Che the Great.";
-        }
+        button.addEventListener("click", function() {
+            count++;
+            display.innerHTML = "You have clicked " + count + " times";
+        });
     </script>
 </body>
 </html>
