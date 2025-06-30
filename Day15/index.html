@@ -1,106 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The shopping card</title>
     <link rel="stylesheet" href="learnjs.css">
 </head>
+
 <body>
-    <h3>This won't show on this device because you need a laptop to view this and use the console in the web browser</h3>
+    <h3>This won't show on this device because you need a laptop to view this and use the console in the web browser
+    </h3>
     <h1>This is My page with Buttons that functions <br>in the console when clicked.</h1>
     <h2>Click The buttons to see the results in the console</h2>
-    <p>Open the console to see the buttons.To open the console,<br> right click on an empty space on the page and select inspect. <br>There now you will see the developer options open <br> in your browser and below you click the console tab.</p>
+    <p>Open the console to see the buttons.To open the console,<br> right click on an empty space on the page and select
+        inspect. <br>There now you will see the developer options open <br> in your browser and below you click the
+        console tab.</p>
     <div class="buttons">
         <button onclick="shoppingCart()">Click to start shopping</button>
     </div>
     <script>
-        function shoppingCart(){
+        function shoppingCart() {
             let cartItems = [
-                {name: "Phone", price: 100, qtyinstock: 15},
-                {name: "computers", price: 300, qtyinstock: 10},
-                {name: "PS5", price: 700, qtyinstock: 2},
-                {name: "earpods", price: 150, qtyinstock: 20},
-                {name: "Televisions", price: 500, qtyinstock: 6},
+                { name: "Phone", price: 100, qtyinstock: 15 },
+                { name: "computers", price: 300, qtyinstock: 10 },
+                { name: "PS5", price: 700, qtyinstock: 2 },
+                { name: "earpods", price: 150, qtyinstock: 20 },
+                { name: "Televisions", price: 500, qtyinstock: 6 },
             ]
 
             let listOfItems = []
 
             alert('view the catalog in the console. Make sure you read everything.')
             console.log("Welcome to the Home accesories Store for all your electronic Gadgets")
-            for(let i = 0; i < cartItems.length; i++){
+            for (let i = 0; i < cartItems.length; i++) {
                 console.log(`we have ${cartItems[i].name}. It cost ${cartItems[i].price}$ per unit. Quantity in stock ${cartItems[i].qtyinstock}`)
             }
             alert("i'm sure you're here to buy one of these items. select an item from the catalog given to you.")
             let numberOfItems;
-            while(true){
+            while (true) {
                 numberOfItems = parseInt(prompt("How many category of product do you want to buy. out of 5"))
-                if(numberOfItems > 5){
+                if (numberOfItems > 5) {
                     alert("We have just 5 category of product in this store. You can't buy more than 5 but as the store keeps on growing we will have more products.")
                     console.log('please dont try to buy more than 5 product category')
                     continue;
-                } 
-                else if(isNaN(numberOfItems)){
+                }
+                else if (isNaN(numberOfItems)) {
                     alert("please enter a number. That is not a number.")
                     continue;
                 }
-                else if(numberOfItems < 1){
+                else if (numberOfItems < 1) {
                     alert("You can't buy less than 1 product category")
                     console.log('please dont try to buy less than 1 product category')
                     continue;
                 }
-                else if(numberOfItems > 5){
+                else if (numberOfItems > 5) {
                     alert("We have just 5 caategory of product in this store. You can't buy more than 5 but as the store keeps on growing we will have more products.")
                     console.log('please dont try to buy more than 5 product category')
                     continue;
                 }
-                else if(numberOfItems == 0){
+                else if (numberOfItems == 0) {
                     alert("You can't buy nothing")
                     console.log('please dont try to buy nothing')
                     continue;
                 }
-                else if(numberOfItems > 0 && numberOfItems < 6){
+                else if (numberOfItems > 0 && numberOfItems < 6) {
                     console.log('You have chosed to buy', numberOfItems, 'items')
                     let description = [1, 2, 3, 4, 5]
-                    for(let i = 0; i < description.length && i < cartItems.length; i++){
+                    for (let i = 0; i < description.length && i < cartItems.length; i++) {
                         console.log(`${description[i]} is for ${cartItems[i].name}`)
                     }
                     alert("Chose from 1 to 5")
                     console.log("Chose from 1 to 5")
                     let totqty = 0;
-                    for (i = 0; i < numberOfItems; i++){
-                        while(true){
+                    for (i = 0; i < numberOfItems; i++) {
+                        while (true) {
                             var choseItem = prompt(`Chose product ${i + 1} from the catalog by entering the number of the item you want to buy. For example if you want to buy Phone, enter 1. If you want to buy computers, enter 2 and so on`)
-                            if(Math.floor(choseItem) == null){
+                            if (Math.floor(choseItem) == null) {
                                 console.log("You have cancelled the shopping")
                                 alert('You have cancelled the shopping')
                                 return;
                             }
                             // choseItem = choseItem.trim();
-                            if(isNaN(Math.floor(choseItem))){
+                            if (isNaN(Math.floor(choseItem))) {
                                 console.log("Please enter a number between 1 and 5")
                                 continue;
                             }
                             choseItem = parseInt(Math.floor(choseItem));
-                            if(choseItem < 1 || choseItem > 5){
+                            if (choseItem < 1 || choseItem > 5) {
                                 console.log("Please enter a number between 1 and 5")
                                 continue;
                             }
-                            else{
+                            else {
                                 break;
                             }
                         }
-                        if(choseItem == description[0]){
+                        if (choseItem == description[0]) {
                             let quantity = parseInt(prompt(`Enter quantity of ${cartItems[0].name} you want`))
-                            listOfItems.push({nameofobject: choseItem, quantityofobject: quantity})
-                            while(isNaN(quantity) || quantity < 1 || quantity > cartItems[0].qtyinstock){
-                                if(isNaN(quantity)){
+                            // listOfItems.push({ nameofobject: choseItem, quantityofobject: quantity })
+                            while (isNaN(quantity) || quantity < 1 || quantity > cartItems[0].qtyinstock) {
+                                if (isNaN(quantity)) {
                                     console.log('Enter a number for the quantity not letters')
                                 }
-                                else if(quantity < 1){
+                                else if (quantity < 1) {
                                     console.log('The minimum item to buy is 1')
                                 }
-                                else if(quantity > cartItems[0].qtyinstock){
+                                else if (quantity > cartItems[0].qtyinstock) {
                                     console.log(`we only have ${cartItems[0].qtyinstock} units of this product`)
                                 }
                                 quantity = parseInt(prompt(`Enter quantity of ${cartItems[0].name} you want`))
@@ -110,21 +115,21 @@
                             let priceofitem1 = cartItems[0].price * quantity;
                             console.log(`The price of ${cartItems[0].name} is ${priceofitem1}$`)
                             choseItem = cartItems[0].name;
-                            listOfItems.push({nameofobject: choseItem, quantityofobject: quantity, priceofobject: priceofitem1})
-                            
+                            listOfItems.push({ nameofobject: choseItem, quantityofobject: quantity, priceofobject: priceofitem1 })
+
                         }
-                        else if(choseItem == description[1]){
+                        else if (choseItem == description[1]) {
                             // description[0] = cartItems[1];
                             let quantity = parseInt(prompt(`Enter quantity of ${cartItems[1].name} you want`))
-                            listOfItems.push({nameofobject: choseItem, quantityofobject: quantity})
-                            while(isNaN(quantity) || quantity < 1 || quantity > cartItems[1].qtyinstock){
-                                if(isNaN(quantity)){
+                            // listOfItems.push({ nameofobject: choseItem, quantityofobject: quantity })
+                            while (isNaN(quantity) || quantity < 1 || quantity > cartItems[1].qtyinstock) {
+                                if (isNaN(quantity)) {
                                     console.log('Enter a number for the quantity not letters')
                                 }
-                                else if(quantity < 1){
+                                else if (quantity < 1) {
                                     console.log('The minimum item to buy is 1')
                                 }
-                                else if(quantity > cartItems[1].qtyinstock){
+                                else if (quantity > cartItems[1].qtyinstock) {
                                     console.log(`we only have ${cartItems[1].qtyinstock} units of this product`)
                                 }
                                 quantity = parseInt(prompt(`Enter quantity of ${cartItems[1].name} you want`))
@@ -134,20 +139,20 @@
                             let priceofitem2 = cartItems[1].price * quantity;
                             console.log(`The price of ${cartItems[1].name} is ${priceofitem2}$`)
                             choseItem = cartItems[1].name;
-                            listOfItems.push({nameofobject: choseItem, quantityofobject: quantity, priceofobject: priceofitem2})
+                            listOfItems.push({ nameofobject: choseItem, quantityofobject: quantity, priceofobject: priceofitem2 })
                         }
-                        else if(choseItem == description[2]){
+                        else if (choseItem == description[2]) {
                             // description[0] = cartItems[2];
                             let quantity = parseInt(prompt(`Enter quantity of ${cartItems[2].name} you want`))
-                            listOfItems.push({nameofobject: choseItem, quantityofobject: quantity})
-                            while(isNaN(quantity) || quantity < 1 || quantity > cartItems[2].qtyinstock){
-                                if(isNaN(quantity)){
+                            // listOfItems.push({ nameofobject: choseItem, quantityofobject: quantity })
+                            while (isNaN(quantity) || quantity < 1 || quantity > cartItems[2].qtyinstock) {
+                                if (isNaN(quantity)) {
                                     console.log('Enter a number for the quantity not letters')
                                 }
-                                else if(quantity < 1){
+                                else if (quantity < 1) {
                                     console.log('The minimum item to buy is 1')
                                 }
-                                else if(quantity > cartItems[2].qtyinstock){
+                                else if (quantity > cartItems[2].qtyinstock) {
                                     console.log(`we only have ${cartItems[2].qtyinstock} units of this product`)
                                 }
                                 quantity = parseInt(prompt(`Enter quantity of ${cartItems[2].name} you want`))
@@ -157,20 +162,20 @@
                             let priceofitem3 = cartItems[2].price * quantity;
                             console.log(`The price of ${cartItems[2].name} is ${priceofitem3}$`)
                             choseItem = cartItems[2].name;
-                            listOfItems.push({nameofobject: choseItem, quantityofobject: quantity, priceofobject: priceofitem3})
+                            listOfItems.push({ nameofobject: choseItem, quantityofobject: quantity, priceofobject: priceofitem3 })
                         }
-                        else if(choseItem == description[3]){
+                        else if (choseItem == description[3]) {
                             // description[0] = cartItems[3];
                             let quantity = parseInt(prompt(`Enter quantity of ${cartItems[3].name} you want`))
-                            listOfItems.push({nameofobject: choseItem, quantityofobject: quantity})
-                            while(isNaN(quantity) || quantity < 1 || quantity > cartItems[3].qtyinstock){
-                                if(isNaN(quantity)){
+                            // listOfItems.push({ nameofobject: choseItem, quantityofobject: quantity })
+                            while (isNaN(quantity) || quantity < 1 || quantity > cartItems[3].qtyinstock) {
+                                if (isNaN(quantity)) {
                                     console.log('Enter a number for the quantity not letters')
                                 }
-                                else if(quantity < 1){
+                                else if (quantity < 1) {
                                     console.log('The minimum item to buy is 1')
                                 }
-                                else if(quantity > cartItems[3].qtyinstock){
+                                else if (quantity > cartItems[3].qtyinstock) {
                                     console.log(`we only have ${cartItems[3].qtyinstock} units of this product`)
                                 }
                                 quantity = parseInt(prompt(`Enter quantity of ${cartItems[3].name} you want`))
@@ -180,20 +185,20 @@
                             let priceofitem4 = cartItems[3].price * quantity;
                             console.log(`The price of ${cartItems[3].name} is ${priceofitem4}$`)
                             choseItem = cartItems[3].name;
-                            listOfItems.push({nameofobject: choseItem, quantityofobject: quantity, priceofobject: priceofitem4})
+                            listOfItems.push({ nameofobject: choseItem, quantityofobject: quantity, priceofobject: priceofitem4 })
                         }
-                        else if(choseItem == description[4]){
+                        else if (choseItem == description[4]) {
                             // description[0] = cartItems[4];
                             let quantity = parseInt(prompt(`Enter quantity of ${cartItems[4].name} you want`))
-                            listOfItems.push({nameofobject: choseItem, quantityofobject: quantity})
-                            while(isNaN(quantity) || quantity < 1 || quantity > cartItems[4].qtyinstock){
-                                if(isNaN(quantity)){
+                            // listOfItems.push({ nameofobject: choseItem, quantityofobject: quantity })
+                            while (isNaN(quantity) || quantity < 1 || quantity > cartItems[4].qtyinstock) {
+                                if (isNaN(quantity)) {
                                     console.log('Enter a number for the quantity not letters')
                                 }
-                                else if(quantity < 1){
+                                else if (quantity < 1) {
                                     console.log('The minimum item to buy is 1')
                                 }
-                                else if(quantity > cartItems[4].qtyinstock){
+                                else if (quantity > cartItems[4].qtyinstock) {
                                     console.log(`we only have ${cartItems[4].qtyinstock} units of this product`)
                                 }
                                 quantity = parseInt(prompt(`Enter quantity of ${cartItems[4].name} you want`))
@@ -203,9 +208,9 @@
                             let priceofitem5 = cartItems[4].price * quantity;
                             console.log(`The price of ${cartItems[4].name} is ${priceofitem5}$`)
                             choseItem = cartItems[4].name;
-                            listOfItems.push({nameofobject: choseItem, quantityofobject: quantity, priceofobject: priceofitem5})
+                            listOfItems.push({ nameofobject: choseItem, quantityofobject: quantity, priceofobject: priceofitem5 })
                         }
-                        else{
+                        else {
                             break;
                         }
                     }
@@ -215,15 +220,16 @@
             // console.log(`You have selected ${totqty} items to buy`)
             // console.log(listOfItems)
             console.log("You have selected the following items to buy")
-            for(let i = 0; i < listOfItems.length; i+=1){
-                console.log(`You have selected ${listOfItems[i].quantityofobject} of ${listOfItems[i].nameofobject} at the price of ${listOfItems[i].priceofobject}$`)
+            for (let i = 0; i < listOfItems.length; i++) {
+                console.log(`You have selected ${listOfItems[i].quantityofobject} ${listOfItems[i].nameofobject} at the price of ${listOfItems[i].priceofobject}$`)
             }
             let totalPrice = 0;
-            for(let i = 0; i < listOfItems.length; i++){
+            for (let i = 0; i < listOfItems.length; i++) {
                 totalPrice += listOfItems[i].priceofobject;
             }
-            console.log(totalPrice)
+            console.log(`Your total price is ${totalPrice}$`)
         }
     </script>
 </body>
+
 </html
