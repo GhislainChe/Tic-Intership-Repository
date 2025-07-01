@@ -6,6 +6,37 @@
     <title>first task</title>
 </head>
 <body>
-    
+    <script>
+
+    </script>
+    <h2 id="title">Welcome to my page</h2>
+    <p id="status">I am visible</p>
+    <button id="hideBtn">Hide Text</button>
+    <button id="showtxt">Show text</button>
+    <button id="colorBtn">Change Color</button>
+    <script>
+        let heading = document.getElementById("title");
+        let button = document.getElementById("colorBtn");
+        let hide = document.getElementById('hideBtn');
+        let hidetext = document.getElementById("status");
+        let show = document.getElementById("showtxt");
+        let showingtxt = document.getElementById("")
+
+        button.addEventListener("click", function(){
+            heading.style.color = "blue";
+            heading.style.backgroundColor = "lightyellow";
+            heading.style.fontSize = "30px";
+            heading.style.textAlign = "center"
+            heading.style.display = "none";
+        })
+
+        hide.addEventListener("click", function(){
+            hidetext.style.display = "none";
+        })
+
+        show.addEventListener("click", function() {
+            showtxt.style.display = "block"
+        })
+    </script>
 </body>
 </html>
