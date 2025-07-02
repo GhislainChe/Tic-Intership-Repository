@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 DOM</title>
+</head>
+<body>
+    <h1 id="show">Ghislain</h1>
+    <h2 id="togle">ANONYMOUS</h2>
+    <p>This is day 2 of Learning DOM</p>
+    <button id="hide">hide the h1</button>
+    <button id="toogle">hide and show h2</button>
+    <script>
+        let hiding = document.getElementById("hide")
+        let showing = document.getElementById("show")
+        hiding.addEventListener("click", function(){
+            showing.style.display = "none"
+        })
+
+        let tog = document.getElementById("togle")
+        let toog = document.getElementById("toogle")
+        toog.addEventListener("click", function(){
+           if(tog.style.display == "block"){
+                tog.style.display = "none"
+           }
+           else{
+            tog.style.display = "block"
+           }
+        })
+        
+        
+    </script>
+</body>
+</html>
