@@ -6,6 +6,34 @@
     <title>Ghislain JavaScript day 20</title>
 </head>
 <body>
-    
+    <ul id="todoList">
+        <li>ok</li>
+    </ul>
+    <button id="addItemBtn">Add new task</button>
+    <button id="prompting">What do you want to add</button>
+
+    <script>
+        let list = document.getElementById("todoList");
+        let addBtn = document.getElementById("addItemBtn");
+
+        addBtn.addEventListener("click", function(){
+            let newItem = document.createElement("li");
+            newItem.innerText = "New Task";
+            list.appendChild(newItem);
+        })
+
+        let prompting = document.getElementById("prompting");
+        prompting.addEventListener("click", function(){
+            let pro = prompt("Enter what you want to add")
+            if(pro.trim() !== ""){
+                let addItem = document.createElement("li")
+                addItem.innerText = pro
+                list.appendChild(addItem)
+            }
+            else{
+                alert("you must enter something")
+            }
+        })
+    </script>
 </body>
 </html>

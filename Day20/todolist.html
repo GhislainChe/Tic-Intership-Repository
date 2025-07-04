@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h2>My Todo list</h2>
+    <ul id="list"></ul>
+    <button id="prompting">Add Task</button>
+
+    <script>
+        let list  = document.getElementById("list");
+        let prom = document.getElementById("prompting");
+        prom.addEventListener("click", function(){
+            let add = prompt("Enter new item")
+            if(add.trim() !== " "){
+                let addItem = document.createElement("li");
+                addItem.innerText = add;
+                list.appendChild(addItem)
+                addItem.addEventListener("click", function(){
+                    if(addItem.style.textDecoration == "none"){
+                        addItem.style.textDecoration = "line-through"
+                        alert("task Completed")
+                    }
+                    else{
+                        addItem.style.textDecoration = "none"
+                        alert("Task added to your to do")
+                    }
+                    
+                })
+            }
+            else{
+                alert("You must enter an item")
+            }
+
+        })
+    </script>
+</body>
+</html>
