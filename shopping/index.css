@@ -5,10 +5,10 @@
 }
 
 body{
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(shopback.jpeg);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('girl-7296049.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 100%;
     height: 100vh;
     width: 100%;
     font-family: 'poppins', sans-serif;
@@ -35,17 +35,20 @@ body{
 }
 
 .nav .logo h1{
-    color: #fff;
+    color: #abd2f9;
     font-weight: 700;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'poppins', sans-serif;
+    font-style: normal;
     text-decoration: none;
     cursor: pointer;
     font-size: 2.2em;
+    user-select: none;
 }
 
 .nav .logo i{
-    color: aqua;
+    color: #1abc9c;
     font-size: 1.8em;
+    cursor: pointer;
 }
 
 .nav .cta{
@@ -58,21 +61,24 @@ body{
 
 .nav .cta button{
     padding: 10px 20px;
-    border: none;
+    border: 1px solid teal;
     outline: none;
     border-radius: 20px;
-    background-color: aqua;
+    background: none;
     cursor: pointer;
     font-family: "Quicksand", sans-serif;
     font-weight: 700;
     text-transform: capitalize;
     font-size: .9em;
     text-align: center;
+    color: #fff;
+    user-select: none;
     transition: transform 0.3s ease;
 }
 
 .nav .cta button:hover{
     transform: scale(1.07);
+    background-color: #16a085;
 }
 
 .content{
@@ -80,17 +86,19 @@ body{
     width: 100%;
     max-width: 800px;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     margin: 0 auto;
     gap: 10px;
 }
 
 .content .text{
-    width: 100%;
+    /* width: 100%; */
     color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: end;
     gap: 10px;
 }
 
@@ -105,6 +113,7 @@ body{
     font-family: "Quicksand", sans-serif;
     font-weight: 600;
     line-height: 22px;
+    text-align: right;
 }
 
 .content .text .cta-butt{
@@ -116,17 +125,19 @@ body{
 
 .content .text .cta-butt button{
     padding: 15px 40px;
-    background-color: #fff;
-    border: none;
+    background-color: #1abc9c;
+    border: 1px solid #fff;
+    color: #000;
     outline: none;
     font-weight: 700;
     font-size: .9rem;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .content .text .cta-butt button:hover{
     transform: scale(1.02);
+    background-color: #16a085;
 }
 
 .content .text .cta-butt button:nth-child(2){
