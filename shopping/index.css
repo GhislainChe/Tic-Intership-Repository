@@ -30,6 +30,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 5px;
+    /* background-color: red; */
 }
 
 .nav .logo h1{
@@ -39,6 +41,11 @@ body{
     text-decoration: none;
     cursor: pointer;
     font-size: 2.2em;
+}
+
+.nav .logo i{
+    color: aqua;
+    font-size: 1.8em;
 }
 
 .nav .cta{
@@ -56,7 +63,7 @@ body{
     border-radius: 20px;
     background-color: aqua;
     cursor: pointer;
-    font-family:  'lato', sans-serif;
+    font-family: "Quicksand", sans-serif;
     font-weight: 700;
     text-transform: capitalize;
     font-size: .9em;
@@ -90,4 +97,42 @@ body{
 .content .text h1{
     font-size: 5em;
     font-weight: 800;
+    font-family: "Quicksand", sans-serif;
+}
+
+.content .text p{
+    font-size: 1em;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+.content .text .cta-butt{
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    gap: 5px;
+}
+
+.content .text .cta-butt button{
+    padding: 15px 40px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    font-weight: 700;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.content .text .cta-butt button:hover{
+    transform: scale(1.02);
+}
+
+.content .text .cta-butt button:nth-child(2){
+    background: none;
+    border: 1px solid #fff;
+    color: #fff;
+    font-weight: 600;
+    padding: 15px 20px;
 }
