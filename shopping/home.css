@@ -98,3 +98,42 @@ body{
     background-color: #1abc9c;
     transform: scale(1.05);
 }
+
+.introdiscount{
+    width: 100%;
+    background: url(shop.jpg);
+    height: 350px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.introdiscount .text{
+    text-align: right;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.introdiscount .text h1{
+    font-size: 2em;
+    color: #000000;
+    text-transform: capitalize;
+    font-family: "Chewy", system-ui;
+    letter-spacing: 3px;
+    user-select: none;
+}
+
+.introdiscount .text h1 span{
+    font-size: 3.5em;
+    color: #fff;
+    letter-spacing: none;
+    font-family: "Meow Script", cursive;
+    font-weight: 500;
+    font-style: normal;
+    line-height:7px;
+    /* padding: 5px; */
+}
