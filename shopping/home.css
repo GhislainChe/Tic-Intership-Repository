@@ -30,6 +30,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 2;
 }
 
 .navbar .logo{
@@ -79,11 +80,47 @@ body{
     text-transform: capitalize;
     cursor: pointer;
     transition: 0.3s ease;
+    padding: 5px;
+    position: relative;
 }
+
+.navbar nav .menu{
+    font-size: 1.1em;
+    cursor: pointer;
+    color: #000000;
+    /* padding: 10/px; */
+    /* border: 1px solid #1abc9c; */
+    /* border-radius: 50%; */
+    transition: 0.3s ease;
+}
+
+.navbar nav .menu:hover{
+    /* background-color: #1abc9c; */
+    transform: scale(1.05);
+}
+
+/* .navbar nav ul{
+    background-color: red;
+    font-size: 5em;
+    z-index: 5;
+} */
 
 .navbar nav ul li:hover{
     color: #1abc9c;
     transform: scale(1.03);
+}
+
+.navbar nav ul li.active::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0080ff;
+    /* padding-top: 5px; */
+    /* margin-top: 5px; */
+    z-index: 1;
 }
 
 .navbar nav ol{
@@ -107,6 +144,10 @@ body{
     transform: scale(1.05);
 }
 
+/* @media (max-width: ) {
+    
+} */
+
 .introdiscount{
     width: 100%;
     background: url(shop.jpg);
@@ -124,14 +165,16 @@ body{
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
+    padding: 10px;
+    /* background-color: red; */
 }
 
 .introdiscount .text h1{
-    font-size: 2em;
+    font-size: clamp(16px, 2.5vw, 2.2em);
     color: #000000;
     text-transform: capitalize;
     font-family: "Chewy", system-ui;
-    letter-spacing: 3px;
+    letter-spacing: 5px;
     user-select: none;
 }
 
@@ -144,6 +187,30 @@ body{
     font-style: normal;
     line-height:7px;
     /* padding: 5px; */
+}
+
+@media (max-width: 1025px) {
+    .introdiscount{
+        justify-content: flex-start;
+        /* background-color: red; */
+    }
+
+    .introdiscount .text{
+        /* max-width: 700px; */
+        width: 85%;
+        padding: 0 15px;
+        align-self: self-start;
+        padding-top: 35px;
+    }
+
+    .introdiscount .text h1 span{
+        font-size: clamp(20px, 40vw, 4.5em);
+    }
+
+    .introdiscount .text h1 span{
+        line-height: 50px;
+    }
+
 }
 
 .content{
@@ -244,4 +311,12 @@ body{
     font-family: 'lato', sans-serif;
     font-weight: 500;
     background-color: #0080ff;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
+
+.content .content-box .view button:hover{
+    transform: scale(1.02);
+}
+
+
