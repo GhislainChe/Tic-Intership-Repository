@@ -21,14 +21,21 @@
             <h1>Ghislain</h1>
         </div>
         <nav>
-            <ul>
+            <ul id="navi">
                 <li class="active">Home</li>
                 <li>Categories</li>
                 <li>New Arrivals</li>
                 <li>How it Works</li>
                 <li><i class="fa-solid fa-search"></i></li>
             </ul>
-            <i class="fa-solid fa-bars menu" id="navtoggle" style="display: none;"></i>
+            <i class="fa-solid fa-bars menu" id="navtoggle"></i>
+            <script>
+                let navi = document.getElementById("navi")
+                let toggle = document.getElementById("navtoggle")
+                toggle.addEventListener("click", function(){
+                    navi.classList.toggle("show");
+                })
+            </script>
             <ol>
                 <i class="fa-solid fa-basket-shopping"></i>
                 <i class="fa-solid fa-circle-user"></i>

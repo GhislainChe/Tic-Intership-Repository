@@ -62,7 +62,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 10px;
 }
 
 .navbar nav ul{
@@ -92,6 +92,8 @@ body{
     /* border: 1px solid #1abc9c; */
     /* border-radius: 50%; */
     transition: 0.3s ease;
+    /* display: none; */
+    visibility: hidden;
 }
 
 .navbar nav .menu:hover{
@@ -144,9 +146,39 @@ body{
     transform: scale(1.05);
 }
 
-/* @media (max-width: ) {
-    
-} */
+@media (max-width: 860px) {
+    .navbar nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+
+    .navbar nav ul{
+        /* display: flex; */
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #ffffff;
+        list-style: none;
+        padding: 10px;
+        position: fixed;
+        top: 45px 0;
+        z-index: 5;
+        display: none;
+    }
+
+    .navbar nav ul.show{
+        display: flex;
+    }
+
+    .navbar nav .menu{
+        visibility: visible;
+    }
+}
 
 .introdiscount{
     width: 100%;
