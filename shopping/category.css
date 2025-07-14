@@ -23,14 +23,37 @@ body{
     gap: 10px;
 }
 
-.content .left{
+.left{
     width: 25%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: red;
+    gap: 15px;
+    background-color: rgb(233, 0, 0);
     padding: 10px;
+}
+
+.left .category-info{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(images/2g2widxj.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+}
+
+.left .category-info h1{
+    font-size: 1.8em;
+    font-family: 'lato', sans-serif;
 }
 
 .content .right{
