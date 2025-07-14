@@ -29,7 +29,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     gap: 15px;
     background-color: rgb(214, 233, 250);
     border-radius: 15px;
@@ -124,6 +124,88 @@ body{
     display: block;
 }
 
+.left .sort .color{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* justify-content: space-between; */
+    /* padding: 10px 0; */
+}
+
+.left .sort .color h1{
+    font-size: 1.1em;
+    font-weight: 600;
+    font-family: 'quicksand', sans-serif;
+    color: #0400ff;
+    text-transform: capitalize;
+    /* padding: 5px; */
+}
+
+.left .sort .color .color-options{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 5px 0;
+}
+
+.left .sort .color .color-options div{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.left .sort .color .color-options div:hover{
+    transform: scale(1.1);
+}
+
+.left .sort .prices{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* justify-content: space-between; */
+    /* padding: 10px 0; */
+}
+
+.left .sort .prices h1{
+    font-size: 1.1em;
+    font-weight: 600;
+    font-family: 'quicksand', sans-serif;
+    color: #0400ff;
+    text-transform: capitalize;
+    /* padding: 5px; */
+}
+
+.left .sort .prices .price-options{
+    display: flex;
+    /* flex-direction: column; */
+    gap: 5px;
+    flex-wrap: wrap;
+    padding: 5px 0;
+}
+
+.left .sort .prices .price-options .price-option{
+    width: fit-content;
+    padding: 5px 8px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #0080ff98;
+    cursor: pointer;
+    font-size: .8em;
+    font-family: quicksand, sans-serif;
+    color: #000000;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.left .sort .prices .price-options .price-option:hover{
+    background-color: #0080ff;
+    color: #fff;
+    transform: scale(1.05);
+}
+
 .content .right{
     width: 75%;
     height: 100%;
@@ -134,4 +216,10 @@ body{
     padding: 10px;
 }
 
-
+hr{
+    width: 100%;
+    height: 1px;
+    background-color: #afacac;
+    border: none;
+    margin: 15px 0;
+}
