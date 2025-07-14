@@ -148,7 +148,7 @@ body{
 
 .introdiscount{
     width: 100%;
-    background: url(shop.jpg);
+    background-image: url(shop.jpg);
     height: 350px;
     background-repeat: no-repeat;
     background-position: center;
@@ -189,7 +189,9 @@ body{
 
 @media (max-width: 1025px) {
     .introdiscount{
-        justify-content: flex-start;
+        /* justify-content: flex-start; */
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), url(shop.jpg));
+        background-position: 20% center;
         /* background-color: red; */
     }
 
@@ -197,7 +199,7 @@ body{
         /* max-width: 700px; */
         width: 85%;
         padding: 0 15px;
-        align-self: self-start;
+        /* align-self: self-start; */
         padding-top: 35px;
     }
 
@@ -331,6 +333,8 @@ body{
     .navbar .checkbtn{
         display: block;
     }
+
+
 
     .navbar nav ul{
         position: fixed;
