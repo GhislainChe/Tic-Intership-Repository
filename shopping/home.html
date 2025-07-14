@@ -21,23 +21,48 @@
             <h1>Ghislain</h1>
         </div>
         <nav>
+            
             <ul id="navi">
                 <li class="active">Home</li>
                 <li>Categories</li>
                 <li>New Arrivals</li>
                 <li>How it Works</li>
-                <li><i class="fa-solid fa-search"></i></li>
+                <!-- <li></li> -->
             </ul>
+            <i class="fa-solid fa-search"></i>
             <ol>
                 <i class="fa-solid fa-basket-shopping"></i>
                 <i class="fa-solid fa-circle-user"></i>
             </ol>
             <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
+            <label for="check" class="checkbtn" id="checking">
                 <i class="fa-solid fa-bars"></i>
             </label>
         </nav>
     </div>
+    <script>
+        let navi = document.getElementById("navi")
+        let checking = document.getElementById("checking")
+        checking.addEventListener("click", function(){
+            navi.classList.toggle("show-flex");
+            if (navi.style.display === "flex") {
+                navi.style.display = "none";
+            } else {
+                navi.style.display = "flex";
+                navi.style.color = "#fff";
+            }
+            const icon = checking.querySelector("i");
+            if (navi.style.display === "flex") {
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+            } else {
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+            }
+        })
+
+
+    </script>
     </div>
     <div class="introdiscount">
         <div class="text">

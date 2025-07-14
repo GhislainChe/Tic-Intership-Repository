@@ -76,15 +76,16 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .navbar nav ul{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     list-style: none;
     gap: 25px;
+    /* background-color: red; */
 }
 
 .navbar nav ul li{
@@ -334,15 +335,17 @@ body{
     .navbar nav ul{
         position: fixed;
         width: 100vw;
-        height: 100vh;
-        background-color: red;
+        height: fit-content;
+        background-color: rgba(0, 0, 0, 0.767);
+        backdrop-filter: blur(15px);
         top: 60px;
         left: 0;
         text-align: center;
-        gap: 1px;
-        display: flex;
+        display: none;
+        padding: 20px;
         flex-direction: column;
         justify-content: flex-start;
+        gap: 20px;
         transition: all .5s;
         z-index: 999;
         /* align-items: flex-start; */
