@@ -27,10 +27,24 @@
             <h1>Shop with us</h1>
             <p>Shop smarter with curated collection and exclusive offers. <br> From essentials to favourite, we've got it all - just for you<br></p>
             <div class="cta-butt">
-                <button>Shop Now</button>
+                <button id="shop-now">Shop Now</button>
                 <button>Start Selling</button>
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('register').addEventListener('click', function() {
+            window.location.href = 'register.html';
+        });
+
+        document.getElementById('login').addEventListener('click', function() {
+            window.location.href = 'login.html';
+        });
+
+        document.getElementById("shop-now").addEventListener('click', function() {
+            window.location.href = 'home.html';
+        });
+    </script>
 </body>
 </html>
