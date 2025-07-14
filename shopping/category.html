@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
         <div class="content">
             <div class="left">
                 <div class="category-info">
@@ -16,12 +15,34 @@
                 </div>
                 <div class="sort">
                     <h1>Sort</h1>
+                    <div class="dropdown">
+                        <input type="text" id="dropDownInput" placeholder="ALL" autocomplete="off">
+                        <div class="dropdown-list" id="dropdownList">
+                            <div>Samsung</div>
+                            <div>Apple</div>
+                            <div>Google Pixel</div>
+                            <div>OnePlus</div>
+                            <div>Vivo</div>
+                            <div>Xiaomi</div>
+                            <div>Huawei</div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="right">
                 hi
             </div>
         </div>
-    </div>
+        <script>
+            const input = document.getElementById('dropDownInput');
+            const dropdown = document.getElementById('dropdownList');
+            const items = Array.from(dropdown.children);
+
+            input.addEventListener("focus", () => {
+                dropdown.classList.add("show");
+                filterItems();
+            });
+            
+        </script>
 </body>
 </html>
