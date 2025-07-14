@@ -144,65 +144,6 @@ body{
     transform: scale(1.05);
 }
 
-@media (max-width: 952px) {
-    .navbar .logo i{
-        font-size: clamp(22px, 5vw, 1.5em);
-    }
-
-    .navbar .logo h1{
-        font-size: clamp(22px, 5vw, 1.9em);
-    }
-}
-
-@media (max-width: 850px) {
-    .navbar .checkbtn{
-        display: block;
-    }
-
-    .navbar nav ul{
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        background-color: red;
-        top: 61px;
-        left: -100%;
-        text-align: center;
-        gap: 1px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        transition: all .5s;
-        /* align-items: flex-start; */
-    }
-
-    .navbar nav ul li li{
-        width: 100%;
-        padding: 10px;
-        font-size: 1.1em;
-    }
-
-    /* .navbar nav ul li:hover{
-
-    } */
-
-    .navbar nav ul li.active::after{
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%);
-        width: 10%;
-        height: 2px;
-        background-color: #0080ff;
-        /* padding-top: 5px; */
-        /* margin-top: 5px; */
-        /* z-index: -1; */
-    }
-
-    .navbar nav #check:checked ~ .navbar nav ul li{
-        left: 0;
-    }
-}
 
 .introdiscount{
     width: 100%;
@@ -375,4 +316,65 @@ body{
     transform: scale(1.02);
 }
 
+@media (max-width: 952px) {
+    .navbar .logo i{
+        font-size: clamp(22px, 5vw, 1.5em);
+    }
 
+    .navbar .logo h1{
+        font-size: clamp(22px, 5vw, 1.9em);
+    }
+}
+
+@media (max-width: 850px) {
+    .navbar .checkbtn{
+        display: block;
+    }
+
+    .navbar nav ul{
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: red;
+        top: 60px;
+        left: 0;
+        text-align: center;
+        gap: 1px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        transition: all .5s;
+        z-index: 999;
+        /* align-items: flex-start; */
+    }
+
+    .navbar nav ul li li{
+        width: 100%;
+        padding: 10px;
+        font-size: 1.1em;
+    }
+
+    /* .navbar nav ul li:hover{
+
+    } */
+
+    .navbar nav ul li.active::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 100%;
+        height: 2px;
+        background-color: #0080ff;
+        /* padding-top: 5px; */
+        /* margin-top: 5px; */
+        /* z-index: -1; */
+    }
+
+    .navbar nav .check:checked + .checkbtn + ul{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
