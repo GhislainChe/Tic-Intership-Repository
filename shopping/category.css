@@ -71,9 +71,10 @@ body{
 }
 
 .left .sort h1{
-    font-size: 1em;
-    font-family: 'lato', sans-serif;
-    color: #0088ff;
+    font-size: 1.1em;
+    font-weight: 600;
+    font-family: 'quicksand', sans-serif;
+    color: #0400ff;
     text-transform: capitalize;
 }
 
@@ -84,11 +85,12 @@ body{
 
 .left .sort .dropdown input{
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     box-sizing: border-box;
-    border: 1px solid #abd2f9;
+    border: 1px solid #0080ff;
     border-radius: 5px;
     outline: none;
+    font-size: .8em;
 }
 
 .left .sort .dropdown .dropdown-list{
@@ -105,6 +107,21 @@ body{
     z-index: 100;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: none;
+}
+
+.left .sort .dropdown .dropdown-list div{
+    padding: 10px;
+    cursor: pointer;
+    font-size: .8em;
+    color: #333;
+}
+
+.left .sort .dropdown .dropdown-list div:hover{
+    background-color: #f0f0f0;
+}
+
+.left .sort .dropdown .dropdown-list.show{
+    display: block;
 }
 
 .content .right{

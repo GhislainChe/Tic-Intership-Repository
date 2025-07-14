@@ -38,11 +38,39 @@
             const dropdown = document.getElementById('dropdownList');
             const items = Array.from(dropdown.children);
 
-            input.addEventListener("focus", () => {
-                dropdown.classList.add("show");
+            input.addEventListener('focus', () => {
+                dropdown.classList.add('show');
                 filterItems();
             });
-            
+
+            input.addEventListener('input', filterItems);
+            function filterItems() {
+                const val = input.value.toLowerCase();
+                let anyVisible = false;
+                items.forEach(item => {
+                    if (item.textContent.toLowerCase().includes(val)) {
+                        item.style.display = 'block';
+                        anyVisible = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                dropdown.classList.toggle('show', anyVisible);
+            }
+
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    input.value = item.textContent;
+                    dropdown.classList.remove('show');
+                });
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!event.target.closest('.dropdown')) {
+                    dropdown.classList.remove('show');
+                }
+            });
         </script>
 </body>
 </html>
