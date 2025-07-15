@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li id="hell">Hello</li>
+    </ul>
+    <p id="hover">hover over me</p>
+
+    <input type="text" id="nameInput">
+    <p id="result"></p>
+    <select id="language">
+      <option value="">Choose a language</option>
+      <option value="html">HTML</option>
+      <option value="css">CSS</option>
+      <option value="js">JavaScript</option>
+    </select>
+    <p id="chosen"></p>
+
+    <script>
+        let select = document.getElementById('language');
+        let chosen = document.getElementById('chosen');
+
+        select.addEventListener('change', function(){
+            chosen.innerText = `You have chosen: ${select.value}`;
+        })
+
+
+        let nameInput = document.getElementById('nameInput');
+        let result = document.getElementById('result');
+        nameInput.addEventListener('keyup', function() {
+            result.innerText = nameInput.value;
+        });
+
+
+        let hell = document.getElementById('hell')
+        hell.addEventListener('click', function(){
+            alert('Hello World');
+        })
+        let hover = document.getElementById('hover');
+
+        hover.addEventListener('mouseover', function() {
+            hover.style.color = 'red';
+            hell.style.color = 'blue';
+            hell.style.fontSize = '30px';
+        });
+
+        hover.addEventListener('mouseout', function(){
+            hover.style.color = 'black';
+
+        })
+    </script>
+</body>
+</html>
