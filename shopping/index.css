@@ -4,8 +4,13 @@
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 body{
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('girl-7296049.jpg');
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('images/girl-7296049.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

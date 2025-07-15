@@ -14,6 +14,11 @@ body{
     /* background-color: #fcfcfc; */
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
 .navbarr{
     position: sticky;
     top: 0;
