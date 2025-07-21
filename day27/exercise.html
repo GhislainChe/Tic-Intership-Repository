@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello; Enter your name below</h1>
+    <input type="text" id="nameInput">
+    <p id="result"></p>
+    <button id="clicking">Click to be welcomed</button>
+<script>
+    let nameInput = document.getElementById('nameInput');
+    let result = document.getElementById('result');
+    let clicking = document.getElementById('clicking');
+
+    nameInput.addEventListener('keyup', function(){
+        result.innerText = `Hello, ${nameInput.value}` || 'Hello, please enter your name';
+    })
+    result.addEventListener('mouseover', function(){
+        result.style.color = 'blue';
+    })
+    result.addEventListener('mouseout', function(){
+        result.style.color = 'black';
+    })
+    clicking.addEventListener('click', function(){
+        if(nameInput.value.trim() === ''){
+            alert('please enter your name');
+        }
+        else{
+            alert(`Welcome, ${nameInput.value}`);
+            nameInput.value = '';
+            result.innerText = '';
+        }
+    });
+</script>
+
+</body>
+</html>

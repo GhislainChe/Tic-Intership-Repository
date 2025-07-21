@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>excercise 2</title>
+</head>
+<style>
+    body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+    .room {
+        width: 300px;
+        height: 300px;
+        background-color: #0c0c0c;
+        border: 2px solid #ccc;
+        /* margin: 50px auto; */
+        position: relative;
+    }
+
+    .switchBtn{
+        padding: 10px 20px;
+        background-color: rgb(20, 122, 255);
+        color: white;
+        font-size: 1em;
+        font-weight: 600;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    switch:hover {
+        background-color: rgb(10, 80, 200);
+        transform: scale(1.05);
+    }
+</style>
+<body>
+    <div class="room" id="room">
+
+    </div>
+    <button id="switch" class="switchBtn">Turn On</button>
+
+    <script>
+        let room = document.getElementById("room");
+        let switchBtn = document.getElementById("switch");
+        room.addEventListener('mouseover', function(){
+            room.style.border = '2px solid blue';
+            room.style.boxShadow = '1px 1px 40px blue';
+        })
+        room.addEventListener('mouseout', function(){
+            room.style.border = '2px solid #ccc';
+            room.style.boxShadow = 'none';
+        })
+
+        switchBtn.addEventListener('click', function(){
+            if(room.style.backgroundColor === 'yellow'){
+                room.style.backgroundColor = '#0c0c0c';
+                switchBtn.innerText = 'Turn On';
+                room.addEventListener('mouseover', function(){
+                    room.style.border = '2px solid #0c0c0c';
+                    room.style.boxShadow = '1px 1px 40px #0c0c0c';
+                })
+                room.addEventListener('mouseout', function(){
+                    room.style.border = '2px solid #0c0c0c';
+                    room.style.boxShadow = 'none';
+                })
+            } else {
+                room.style.backgroundColor = 'yellow';
+                switchBtn.innerText = 'Turn Off';
+                room.addEventListener('mouseover', function(){
+                    room.style.border = '2px solid yellow';
+                    room.style.boxShadow = '1px 1px 40px yellow';
+                })
+                room.addEventListener('mouseout', function(){
+                    room.style.border = '2px solid yellow';
+                    room.style.boxShadow = 'none';
+                })
+            }
+        });
+    </script>
+</body>
+</html>

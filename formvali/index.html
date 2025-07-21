@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="loginForm">
+        <input type="text" name="" id="username" placeholder="Username">
+        <input type="password" name="" id="password" placeholder="Password">
+        <button type="submit">Login</button>
+    </form>
+    <p id="error"></p>
+    <script>
+        let form = document.getElementById('loginForm');
+        let error = document.getElementById('error');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+
+            if (username === '' || password === '') {
+                error.textContent = 'Please fill in all fields.';
+                return;
+            }
+
+            if (username.length < 3) {
+                error.textContent = 'Username must be at least 3 characters long.';
+                return;
+            }
+
+            if (!username.includes("@") || !username.includes(".")){
+                error.innerText = 'Invalid email address format.';
+                return;
+            }
+
+            if (password.length < 6) {
+                error.textContent = 'Password must be at least 6 characters long.';
+                return;
+            }
+
+            error.textContent = 'Login successful!';
+        });
+    </script>
+</body>
+</html>
