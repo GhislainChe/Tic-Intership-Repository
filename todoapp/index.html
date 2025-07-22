@@ -24,8 +24,11 @@
                 <div class="right">
                     <form action="">
                         <div class="forming">
+                            <label for="email">Username <br>
+                                <input type="Text" name="name" id="Username">
+                            </label>
                             <label for="email">Email <br>
-                                <input type="email" name="email" id="email">
+                                <input type="email" name="email" id="Useremail">
                             </label>
                             <label for="password">Password <br>
                                 <input type="password" name="password" id="password">
@@ -74,22 +77,18 @@
                     <div class="rightContent">
                         <div class="taskList">
                             <h1>Your Tasks</h1>
-                            <div>
-                                <h1>Work Out</h1>
-                                <span class="time">
-                                    <h2>5pm</h2>
-                                    <input type="checkbox">
-                                </span>
+                            <div class="output" id="output">
+                        
                             </div>
                         </div>
                         <div class="addTask">
-                            <button>Add Task</button>
+                            <button id="addTasks">Add Task</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="addingTask">
-                <form action="">
+            <div class="addingTask" id="addingTask">
+                <form action="" id="taskForm">
                     <label for="">Task Name: <br>
                         <input type="text" name="name" id="name">
                     </label>
@@ -102,12 +101,84 @@
                         </label>
                     </div>
                     <div class="button">
-                        <button type="reset">Cancel</button>
+                        <button type="reset" id="cancel">Cancel</button>
                         <button type="submit">Create Task</button>
                     </div>
                 </form>
             </div>
+            <div class="message" id="message">
+                <h1 id="errorMessage">Task Created Succesfully</h1>
+            </div>
+            <div class="overlay" id="overlay"></div>
         </div>
     </div>
+
+    <script>
+        let addTasks = document.getElementById('addTasks')
+        addTasks.addEventListener('click', function() {
+            let addingTask = document.getElementById('addingTask');
+            let overlay = document.getElementById('overlay');
+            overlay.style.display = "block";
+            addingTask.style.display = "block"
+        })
+        let cancel = document.getElementById('cancel').addEventListener('click', function(){
+            let addingTask = document.getElementById('addingTask');
+            let overlay = document.getElementById('overlay');
+            overlay.style.display = "none";
+            addingTask.style.display = "none"
+        })
+        let taskForm = document.getElementById('taskForm')
+        // let name = document.getElementById('name')
+        // let date = document.getElementById('date')
+        // let time = document.getElementById('time')
+        let output = document.getElementById('output')
+        taskForm.addEventListener('submit', function(e){
+            e.preventDefault()
+            let name = document.getElementById('name').value;
+            let date = document.getElementById('date').value;
+            let time = document.getElementById('time').value;
+            let message = document.getElementById('message')
+            let errorMessage = document.getElementById('errorMessage')
+            if(name === "" || date === "" || time === ""){
+                message.style.display = 'block'
+                errorMessage.textContent = 'You must enter all the field'
+                setTimeout(() =>{
+                    message.style.display = 'none'
+                }, 5000)
+                return;
+            }
+
+            let container = document.createElement('div');
+            container.classList.add('taskBox');
+            let h1 = document.createElement('h1');
+            h1.classList.add('taskTitle');
+            h1.textContent = name
+            let span = document.createElement('span');
+            span.classList.add('time');
+            let h2 = document.createElement('h2');
+            h2.classList.add('taskTime');
+            h2.textContent = time
+            let checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';;
+            checkbox.classList.add('taskComplete');
+
+            span.appendChild(h2);
+            span.appendChild(checkbox);
+            container.appendChild(h1);
+            container.appendChild(span);
+            output.appendChild(container);
+
+            taskForm.reset();
+            let addingTask = document.getElementById('addingTask');
+            let overlay = document.getElementById('overlay');
+            overlay.style.display = 'none'
+            addingTask.style.display = 'none'
+            message.style.display = 'block'
+            errorMessage.textContent = 'Task Created Succesfully'
+            setTimeout(() => {
+                message.style.display = 'none';
+            }, 3500)
+        })
+    </script>
 </body>
 </html>

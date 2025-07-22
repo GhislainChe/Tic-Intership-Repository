@@ -14,6 +14,7 @@ body{
     padding: 0;
     background-color: #fcfcfc;
     position: relative;
+    backdrop-filter: blur(30px);
 }
 
 .container{
@@ -166,7 +167,8 @@ body{
 .todoappcontainer .todoapp{
     width: 100%;
     max-width: 900px;
-    height: 550px;
+    height: fit-content;
+    height: 500px;
     margin: 0 auto;
     border: 4px solid #fff;
     border-radius: 12px;
@@ -293,7 +295,7 @@ hr{
     margin: 0 auto;
 }
 
-.todoappcontainer .todoapp .right .rightContent .taskList h1{
+.todoappcontainer .todoapp .right .rightContent .taskList  h1{
     font-size: 2.2em;
     font-family: "quicksand", sans-serif;
     font-weight: 600;
@@ -302,8 +304,16 @@ hr{
     /* padding: 10px 0; */
 }
 
-.todoappcontainer .todoapp .right .rightContent .taskList div{
+.todoappcontainer .todoapp .right .rightContent .taskList .output{
     width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0 auto;
+}
+
+.todoappcontainer .todoapp .right .rightContent .taskList .output div{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -313,27 +323,28 @@ hr{
     margin: 0 auto;
 }
 
-.todoappcontainer .todoapp .right .rightContent .taskList div h1{
+.todoappcontainer .todoapp .right .rightContent .taskList .output div h1{
     font-size: 1.08em;
     font-family: "Winky Rough", sans-serif;
     font-weight: 600;
     color: rgba(0, 81, 255, 0.842);
 }
 
-.todoappcontainer .todoapp .right .rightContent .taskList div span{
+
+.todoappcontainer .todoapp .right .rightContent .taskList .output div span{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
 
-.todoappcontainer .todoapp .right .rightContent .taskList div span h2{
+.todoappcontainer .todoapp .right .rightContent .taskList .output div span h2{
     font-size: 1em;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #000000b9;
 }
 
-.todoappcontainer .todoapp .right .rightContent .taskList div span input{
+.todoappcontainer .todoapp .right .rightContent .taskList .output div span input{
     border-radius: 50%;
 }
 
@@ -372,6 +383,8 @@ hr{
     border-radius: 12px;
     box-shadow: 3px 3px 20px #00000070;
     display: none;
+    z-index: 999;
+    margin: 10px 20px;
 }
 
 .todoappcontainer .addingTask form{
@@ -438,4 +451,58 @@ hr{
 
 .todoappcontainer .addingTask form .button button:hover{
     transform: scale(1.03);
+}
+
+.overlay{
+    display: none;
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.message{
+    position: absolute;
+    top: 20px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: blue;
+    border-radius: 40px;
+    padding: 10px 20px;
+    display: none;
+    animation-name: shake;
+    animation-duration: .7s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    z-index: 999;
+}
+
+@keyframes shake {
+    0%{
+        padding: 10px 30px;
+    }
+    30%{
+        padding: 10px 25px;
+    }
+    70%{
+        padding: 10px 15px;
+    }
+    100%{
+        padding: 10px 30px;
+    }
+    
+}
+
+.message h1{
+    font-size: .9em;
+    color: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+@media (max-width: 550px) {
+    
 }
