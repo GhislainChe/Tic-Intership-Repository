@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ghislain | Todo app</title>
+    <link rel="stylesheet" href="index.css">
     <script src="https://kit.fontawesome.com/95ebfc49eb.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -11,18 +12,74 @@
         <div class="content">
             <div class="signup">
                 <div class="left">
+                    <i class="fa-solid fa-list-check"></i>
                     <h1>Register</h1>
                     <p>Crete your Ghislain's Account</p>
+                    <ul>
+                        <li>Creat your Tasks</li>
+                        <li>Complete Your Tasks</li>
+                        <li>Mark your Tasks</li>
+                    </ul>
                 </div>
                 <div class="right">
                     <form action="">
-                        <label for="email">Email
-                            <input type="email" name="email" id="email">
-                        </label>
-                        <label for="password">Password
-                            <input type="password" name="password" id="password">
-                        </label>
+                        <div class="forming">
+                            <label for="email">Email <br>
+                                <input type="email" name="email" id="email">
+                            </label>
+                            <label for="password">Password <br>
+                                <input type="password" name="password" id="password">
+                            </label>
+                        </div>
+                        <div class="but">
+                            <button type="submit">Sign In</button>
+                        </div>
                     </form>
+                </div>
+            </div>
+        </div>
+        <div class="todoappcontainer">
+            <div class="todoapp">
+                <div class="left">
+                    <div class="profile">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <div class="info">
+                            <h1>do-it</h1>
+                            <p id="userName">Ghislain</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="taskInfo">
+                        <div class="infoheader">
+                            <i class="fa-solid fa-calendar"></i>
+                            <h1>Today's Task</h1>
+                        </div>
+                        <div class="infoheader">
+                            <i class="fa-solid fa-calendar"></i>
+                            <h1>Today's Task</h1>
+                        </div>
+                        <div class="infoheader">
+                            <i class="fa-solid fa-calendar"></i>
+                            <h1>Today's Task</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="rightContent">
+                        <div class="taskList">
+                            <h1>Your Tasks</h1>
+                            <div>
+                                <h1>Work Out</h1>
+                                <span class="time">
+                                    <h2>5pm</h2>
+                                    <input type="checkbox">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="addTask">
+                            <button>Add Task</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
