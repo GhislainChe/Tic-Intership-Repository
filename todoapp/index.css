@@ -188,26 +188,28 @@ body{
 .todoappcontainer .todoapp .profile{
     width: 100%;
     display: flex;
-    gap: 8px;
+    gap: 10px;
     align-items: center;
     justify-content: flex-start;
+    padding: 5px;
 }
 
 .todoappcontainer .todoapp .profile i{
-    font-size: 2.2em;
+    font-size: 3.5em;
     color: #000000c0;
 }
 
 .todoappcontainer .todoapp .profile .info h1{
-    font-size: 1em;
+    font-size: 1.2em;
     font-family: "quicksand", sans-serif;
     text-transform: capitalize;
+    font-weight: 600;
 }
 
 .todoappcontainer .todoapp .profile .info p{
-    font-size: 1.1em;
+    font-size: 1.3em;
     font-family: "quicksand", sans-serif;   
-    font-weight: 500;
+    font-weight:700;
     color: rgb(0, 81, 255);
 }
 
@@ -221,25 +223,42 @@ hr{
 .todoappcontainer .todoapp .taskInfo{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 10px;
+    gap: 15px;
+    height: 100%;
 }
 
-.todoappcontainer .todoapp .taskInfo .infoheader{
+.todoappcontainer .todoapp .taskInfo .infor{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+    height: 100%;
+}
+
+.todoappcontainer .todoapp .taskInfo .out{
+    display: flex;
+    gap: 5px;
+    font-size: .9em;
+    color: #000000cc;
+}
+
+.todoappcontainer .todoapp .taskInfo .infor .infoheader{
     display: flex;
     gap: 10px;
     align-items: center;
 }
 
-.todoappcontainer .todoapp .taskInfo .infoheader i{
-    font-size: .9em;
+.todoappcontainer .todoapp .taskInfo .infor .infoheader i{
+    font-size: 1em;
     color: purple;
 }
 
-.todoappcontainer .todoapp .taskInfo .infoheader h1{
-    font-size: .9em;
-    color: #000;
+.todoappcontainer .todoapp .taskInfo .infor .infoheader h1{
+    font-size: 1em;
+    color: #000000da;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
    
