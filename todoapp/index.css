@@ -266,12 +266,12 @@ hr{
 }
 
 .todoappcontainer .todoapp .taskInfo .infor .infoheader i{
-    font-size: .9em;
+    font-size: 1em;
     color: purple;
 }
 
 .todoappcontainer .todoapp .taskInfo .infor .infoheader h1{
-    font-size: .9em;
+    font-size: 1em;
     color: #000000da;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
@@ -496,6 +496,7 @@ hr{
     color: #fff;
     position: absolute;
     display: none;
+    z-index: 1000;
 }
 
 @keyframes shake {
@@ -572,6 +573,7 @@ hr{
     .todoappcontainer{
         padding: 0px;
         align-items: flex-start;
+        margin: 0px;
     }
 
     .todoappcontainer .todoapp{
@@ -583,10 +585,35 @@ hr{
     .todoappcontainer .todoapp .left{
         display: none;
         position: absolute;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        gap: 30px;
+        gap: 20px;
+    }
+
+    .todoappcontainer .todoapp .profile{
+        gap: 15px;
+        width: 95%;
+        margin: 0 auto;
+        padding-top: 10px;
+    }
+
+    .todoappcontainer .todoapp .profile i{
+        font-size: 4em;
+        color: #000000c0;
+    }
+
+    .todoappcontainer .todoapp .profile .info h1{
+        font-size: 1.4em;
+    }
+
+    .todoappcontainer .todoapp .profile .info p{
+        font-size: 1.5em;
+    }
+
+    hr{
+        width: 70%;
+    }
+
+    .todoappcontainer .todoapp .taskInfo{
+        padding: 15px 10px;
     }
 
     .todoappcontainer .todoapp .right{

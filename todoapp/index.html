@@ -184,14 +184,32 @@
 
         let menu = document.getElementById('toogle-menu')
         menu.addEventListener('click', function(){
-            let leftSide = document.getElementById('left-side')
-            let overlay = document.getElementById('overlay');
-            overlay.style.display = 'block'
-            leftSide.style.display = 'block'
-            leftSide.style.position = 'absolute'
-            leftSide.style.width = '70%'
-            leftSide.style.right = '1px'
-            leftSide.style.zIndex = '999'
+            if(menu.classList.contains('fa-bars')){
+                menu.classList.remove('fa-bars')
+                menu.style.color = 'rgba(96, 146, 255, 0.795)'
+                menu.classList.add('fa-xmark')
+                let leftSide = document.getElementById('left-side')
+                let overlay = document.getElementById('overlay');
+                overlay.style.display = 'block'
+                leftSide.style.display = 'flex'
+                leftSide.style.position = 'absolute'
+                leftSide.style.width = '70%'
+                leftSide.style.right = '1px'
+                leftSide.style.zIndex = '999'
+            }
+            else{
+                menu.classList.remove('fa-xmark')
+                menu.classList.add('fa-bars')
+                menu.style.color = '#fff'
+                let leftSide = document.getElementById('left-side')
+                let overlay = document.getElementById('overlay');
+                overlay.style.display = 'none'
+                leftSide.style.display = 'none'
+                leftSide.style.position = 'none'
+                leftSide.style.width = '70%'
+                leftSide.style.right = '1px'
+                leftSide.style.zIndex = '-1'
+            }
         })
     </script>
 </body>
