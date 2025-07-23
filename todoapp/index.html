@@ -9,7 +9,8 @@
 </head>
 <body>
     <div class="container">
-        <div class="content">
+        <div class="content" id="hide">
+            <p id="loginMsg"></p>
             <div class="signup">
                 <div class="left">
                     <i class="fa-solid fa-list-check"></i>
@@ -22,7 +23,7 @@
                     </ul>
                 </div>
                 <div class="right">
-                    <form action="">
+                    <form action="" id="forms">
                         <div class="forming">
                             <label for="email">Username <br>
                                 <input type="Text" name="name" id="Username">
@@ -41,81 +42,136 @@
                 </div>
             </div>
         </div>
-        <div class="todoappcontainer">
-            <div class="todoapp">
-                <div class="left" id="left-side">
-                    <div class="profile">
-                        <i class="fa-solid fa-circle-user"></i>
-                        <div class="info">
-                            <h1>do-it</h1>
-                            <p id="userName">Ghislain</p>
+        <div class="todoappcontainer" id="mainContainer">
+            <div class="todoappcontainers">
+                <div class="todoapp">
+                    <div class="left" id="left-side">
+                        <div class="profile">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <div class="info">
+                                <h1>do-it</h1>
+                                <p id="usersName">User</p>
+                            </div>
+                            <i class="fa-solid fa-xmark" id="close"></i>
                         </div>
-                        <i class="fa-solid fa-xmark" id="close"></i>
+                        <hr>
+                        <div class="taskInfo">
+                            <div class="infor">
+                                <div class="infoheader">
+                                    <i class="fa-solid fa-calendar"></i>
+                                    <h1>Today's Tasks</h1>
+                                </div>
+                                <div class="infoheader">
+                                    <i class="fa-solid fa-clock"></i>
+                                    <h1>Scheduled Tasks</h1>
+                                </div>
+                                <div class="infoheader">
+                                    <i class="fa-solid fa-gear"></i>
+                                    <h1>Settings</h1>
+                                </div>
+                            </div>
+                            <div class="out">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <p>Sign Out</p>
+                            </div>
+                        </div>
                     </div>
-                    <hr>
-                    <div class="taskInfo">
-                        <div class="infor">
-                            <div class="infoheader">
-                                <i class="fa-solid fa-calendar"></i>
-                                <h1>Today's Tasks</h1>
+                    <div class="right">
+                        <div class="rightContent">
+                            <div class="taskList">
+                                <h1>Your Tasks</h1>
+                                <i class="fa-solid fa-bars" id="toogle-menu"></i>
+                                <div class="output" id="output">
+                                
+                                </div>
                             </div>
-                            <div class="infoheader">
-                                <i class="fa-solid fa-clock"></i>
-                                <h1>Scheduled Tasks</h1>
+                            <div class="addTask">
+                                <button id="addTasks">Add Task</button>
                             </div>
-                            <div class="infoheader">
-                                <i class="fa-solid fa-gear"></i>
-                                <h1>Settings</h1>
-                            </div>
-                        </div>
-                        <div class="out">
-                            <i class="fa-solid fa-right-from-bracket"></i>
-                            <p>Sign Out</p>
                         </div>
                     </div>
                 </div>
-                <div class="right">
-                    <div class="rightContent">
-                        <div class="taskList">
-                            <h1>Your Tasks</h1>
-                            <i class="fa-solid fa-bars" id="toogle-menu"></i>
-                            <div class="output" id="output">
-                        
-                            </div>
+                <div class="addingTask" id="addingTask">
+                    <form action="" id="taskForm">
+                        <label for="">Task Name: <br>
+                            <input type="text" name="name" id="name">
+                        </label>
+                        <div class="datetime">
+                            <label for="">Task Date: <br>
+                                <input type="date" name="date" id="date">
+                            </label>
+                            <label for="">Task Time: <br>
+                                <input type="time" name="time" id="time">
+                            </label>
                         </div>
-                        <div class="addTask">
-                            <button id="addTasks">Add Task</button>
+                        <div class="button">
+                            <button type="reset" id="cancel">Cancel</button>
+                            <button type="submit">Create Task</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
+                <div class="message" id="message">
+                    <h1 id="errorMessage">Task Created Succesfully</h1>
+                </div>
+                <div class="overlay" id="overlay"></div>
             </div>
-            <div class="addingTask" id="addingTask">
-                <form action="" id="taskForm">
-                    <label for="">Task Name: <br>
-                        <input type="text" name="name" id="name">
-                    </label>
-                    <div class="datetime">
-                        <label for="">Task Date: <br>
-                            <input type="date" name="date" id="date">
-                        </label>
-                        <label for="">Task Time: <br>
-                            <input type="time" name="time" id="time">
-                        </label>
-                    </div>
-                    <div class="button">
-                        <button type="reset" id="cancel">Cancel</button>
-                        <button type="submit">Create Task</button>
-                    </div>
-                </form>
-            </div>
-            <div class="message" id="message">
-                <h1 id="errorMessage">Task Created Succesfully</h1>
-            </div>
-            <div class="overlay" id="overlay"></div>
         </div>
     </div>
 
     <script>
+        let hide = document.getElementById('hide')
+        let mainContainer = document.getElementById('mainContainer')
+        let form = document.getElementById('forms')
+        
+        form.addEventListener('submit', function(ev){
+            ev.preventDefault()
+            let userEmail = document.getElementById('Useremail').value
+            let password = document.getElementById('password').value
+            let loginMsg = document.getElementById('loginMsg')
+            var userName = document.getElementById('Username').value
+            if(userName === "" || userEmail === "" || password === ""){
+                loginMsg.style.display = 'block'
+                loginMsg.textContent = 'You must fill in all Fields'
+                setTimeout(() => {
+                    loginMsg.style.display = 'none';
+                }, 3500)
+                return;
+            }
+
+            if(password.length < 6){
+                let passwords = document.getElementById('password')
+                loginMsg.style.display = 'block'
+                loginMsg.textContent = 'Password Must be At least 6 Characters'
+                passwords.style.border = '1px solid red'
+                setTimeout(() => {
+                    loginMsg.style.display = 'none';
+                    passwords.style.border = '1px solid blue'
+                }, 3500)
+                return;
+            }
+
+            if(!userEmail.includes("@") || !userEmail.includes(".")){
+                let passwords = document.getElementById('Useremail')
+                loginMsg.style.display = 'block'
+                loginMsg.textContent = 'Invalid Email Format'
+                passwords.style.border = '1px solid red'
+                setTimeout(() => {
+                    loginMsg.style.display = 'none';
+                    passwords.style.border = '1px solid blue'
+                }, 3500)
+                return;
+            }
+
+            hide.style.display = 'none'
+            mainContainer.style.display = 'block'
+            let usa = document.getElementById('usersName')        
+            if(userName.length > 8){
+                userName = userName.substring(0, 8) + '...'
+            }
+            usa.innerText = userName
+
+        })
+
         let addTasks = document.getElementById('addTasks')
         addTasks.addEventListener('click', function() {
             let addingTask = document.getElementById('addingTask');

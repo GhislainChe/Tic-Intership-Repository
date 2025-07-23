@@ -37,6 +37,17 @@ body{
     /* background-color: #000; */
 }
 
+.content #loginMsg{
+    position: absolute;
+    margin: 0 auto;
+    top: 10px;
+    color: red;
+    display: none;
+    font-family: "Quicksand", sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+}
+
 .content .signup{
     width: 100%;
     max-width: 620px;
@@ -48,6 +59,7 @@ body{
     /* height: 300px; */
     border-radius: 12px;
     box-shadow: 3px 3px 20px #0000003f;
+    position: relative;
 }
 
 .content .signup .left{
@@ -161,6 +173,12 @@ body{
 .todoappcontainer{
     width: 100%;
     height: 100vh;
+    padding: 5px;
+    display: none;
+}
+.todoappcontainers{
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -169,7 +187,7 @@ body{
     padding: 5px;
 }
 
-.todoappcontainer .todoapp{
+.todoappcontainers .todoapp{
     width: 100%;
     max-width: 900px;
     height: fit-content;
@@ -182,7 +200,7 @@ body{
     justify-content: center;
 }
 
-.todoappcontainer .todoapp .left{
+.todoappcontainers .todoapp .left{
     width: 30%;
     height: 100%;
     background-color: #fff;
@@ -193,7 +211,7 @@ body{
     gap: 20px;
 }
 
-.todoappcontainer .todoapp .profile{
+.todoappcontainers .todoapp .profile{
     width: 100%;
     display: flex;
     gap: 10px;
@@ -203,24 +221,24 @@ body{
     position: relative;
 }
 
-.todoappcontainer .todoapp .profile i{
+.todoappcontainers .todoapp .profile i{
     font-size: 3.5em;
     color: #000000c0;
 }
 
-.todoappcontainer .todoapp .profile i#close{
+.todoappcontainers .todoapp .profile i#close{
     display: none;
     position: absolute;
 }
 
-.todoappcontainer .todoapp .profile .info h1{
+.todoappcontainers .todoapp .profile .info h1{
     font-size: 1.2em;
     font-family: "quicksand", sans-serif;
     text-transform: capitalize;
     font-weight: 600;
 }
 
-.todoappcontainer .todoapp .profile .info p{
+.todoappcontainers .todoapp .profile .info p{
     font-size: 1.3em;
     font-family: "quicksand", sans-serif;   
     font-weight:700;
@@ -234,7 +252,7 @@ hr{
     margin: 0 auto;
 }
 
-.todoappcontainer .todoapp .taskInfo{
+.todoappcontainers .todoapp .taskInfo{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -243,7 +261,7 @@ hr{
     height: 100%;
 }
 
-.todoappcontainer .todoapp .taskInfo .infor{
+.todoappcontainers .todoapp .taskInfo .infor{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -252,25 +270,25 @@ hr{
     height: 100%;
 }
 
-.todoappcontainer .todoapp .taskInfo .out{
+.todoappcontainers .todoapp .taskInfo .out{
     display: flex;
     gap: 5px;
     font-size: .9em;
     color: #000000cc;
 }
 
-.todoappcontainer .todoapp .taskInfo .infor .infoheader{
+.todoappcontainers .todoapp .taskInfo .infor .infoheader{
     display: flex;
     gap: 10px;
     align-items: center;
 }
 
-.todoappcontainer .todoapp .taskInfo .infor .infoheader i{
+.todoappcontainers .todoapp .taskInfo .infor .infoheader i{
     font-size: 1em;
     color: purple;
 }
 
-.todoappcontainer .todoapp .taskInfo .infor .infoheader h1{
+.todoappcontainers .todoapp .taskInfo .infor .infoheader h1{
     font-size: 1em;
     color: #000000da;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -278,14 +296,14 @@ hr{
    
 }
 
-.todoappcontainer .todoapp .right{
+.todoappcontainers .todoapp .right{
     width: 100%;
     height: 100%;
     /* background-color: #000; */
     padding: 20px;
 }
 
-.todoappcontainer .todoapp .right .rightContent{
+.todoappcontainers .todoapp .right .rightContent{
     width: 95%;
     height: 100%;
     margin: 0 auto;
@@ -296,7 +314,7 @@ hr{
     gap: 30px;
 }
 
-.todoappcontainer .todoapp .right .rightContent .taskList{
+.todoappcontainers .todoapp .right .rightContent .taskList{
     width: 95%;
     display: flex;
     align-items: flex-start;
@@ -306,7 +324,7 @@ hr{
     margin: 0 auto;
 }
 
-.todoappcontainer .todoapp .right .rightContent .taskList  h1{
+.todoappcontainers .todoapp .right .rightContent .taskList  h1{
     font-size: 2.2em;
     font-family: "quicksand", sans-serif;
     font-weight: 600;
@@ -315,7 +333,7 @@ hr{
     /* padding: 10px 0; */
 }
 
-.todoappcontainer .todoapp .right .rightContent .taskList .output{
+.todoappcontainers .todoapp .right .rightContent .taskList .output{
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -323,7 +341,7 @@ hr{
     margin: 0 auto;
 }
 
-.todoappcontainer .todoapp .right .rightContent .taskList .output div{
+.todoappcontainers .todoapp .right .rightContent .taskList .output div{
     width: 100%;
     display: flex;
     align-items: center;
@@ -334,7 +352,7 @@ hr{
     margin: 0 auto;
 }
 
-.todoappcontainer .todoapp .right .rightContent .taskList .output div h1{
+.todoappcontainers .todoapp .right .rightContent .taskList .output div h1{
     font-size: 1.08em;
     font-family: "Winky Rough", sans-serif;
     font-weight: 600;
@@ -342,30 +360,30 @@ hr{
 }
 
 
-.todoappcontainer .todoapp .right .rightContent .taskList .output div span{
+.todoappcontainers .todoapp .right .rightContent .taskList .output div span{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
 
-.todoappcontainer .todoapp .right .rightContent .taskList .output div span h2{
+.todoappcontainers .todoapp .right .rightContent .taskList .output div span h2{
     font-size: 1em;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #000000b9;
 }
 
-.todoappcontainer .todoapp .right .rightContent .taskList .output div span input{
+.todoappcontainers .todoapp .right .rightContent .taskList .output div span input{
     border-radius: 50%;
 }
 
-.todoappcontainer .todoapp .right .rightContent .addTask{
+.todoappcontainers .todoapp .right .rightContent .addTask{
     width: 70%;
     /* max-width: 400px; */
     margin: 0 auto;
 }
 
-.todoappcontainer .todoapp .right .rightContent .addTask button{
+.todoappcontainers .todoapp .right .rightContent .addTask button{
     width: 100%;
     font-size: 1.1em;
     padding: 8px;
@@ -380,12 +398,12 @@ hr{
     transition: all 0.3s ease;
 }
 
-.todoappcontainer .todoapp .right .rightContent .addTask button:hover{
+.todoappcontainers .todoapp .right .rightContent .addTask button:hover{
     transform: scale(1.03);
     background-color: rgba(132, 0, 255, 0.664);
 }
 
-.todoappcontainer .addingTask{
+.todoappcontainers .addingTask{
     position: absolute;
     inset: 1;
     width: 100%;
@@ -398,7 +416,7 @@ hr{
     margin: 10px 20px;
 }
 
-.todoappcontainer .addingTask form{
+.todoappcontainers .addingTask form{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -406,7 +424,7 @@ hr{
     padding: 15px;
 }
 
-.todoappcontainer .addingTask form .datetime{
+.todoappcontainers .addingTask form .datetime{
     width: 100%;
     display: flex;
     gap: 7px;
@@ -414,7 +432,7 @@ hr{
     justify-content: center;
 }
 
-.todoappcontainer .addingTask form label{
+.todoappcontainers .addingTask form label{
     width: 100%;
     text-align: center;
     color: rgb(0, 81, 255);
@@ -423,7 +441,7 @@ hr{
     font-weight: 600;
 }
 
-.todoappcontainer .addingTask form label input{
+.todoappcontainers .addingTask form label input{
     width: 100%;
     padding: 5px;
     border: 1px solid blue;
@@ -434,7 +452,7 @@ hr{
     font-family: "quicksand", sans-serif;
 }
 
-.todoappcontainer .addingTask form .button{
+.todoappcontainers .addingTask form .button{
     display: flex;
     width: 100%;
     align-items: center;
@@ -445,7 +463,7 @@ hr{
     margin-top: 15px;
 }
 
-.todoappcontainer .addingTask form .button button{
+.todoappcontainers .addingTask form .button button{
     width: 100%;
     font-size: 1.1em;
     padding: 8px;
@@ -460,7 +478,7 @@ hr{
     transition: all 0.3s ease;
 }
 
-.todoappcontainer .addingTask form .button button:hover{
+.todoappcontainers .addingTask form .button button:hover{
     transform: scale(1.03);
 }
 
@@ -491,7 +509,7 @@ hr{
     z-index: 999;
 }
 
-.todoappcontainer .todoapp .right i{
+.todoappcontainers .todoapp .right i{
     font-size: 1.5em;
     color: #fff;
     position: absolute;
@@ -570,41 +588,41 @@ hr{
         max-width: 400px;
     } */
 
-    .todoappcontainer{
+    .todoappcontainers{
         padding: 0px;
         align-items: flex-start;
         margin: 0px;
     }
 
-    .todoappcontainer .todoapp{
+    .todoappcontainers .todoapp{
         height: 100%;
         border-radius: 0px;
         position: relative;
     }
 
-    .todoappcontainer .todoapp .left{
+    .todoappcontainers .todoapp .left{
         display: none;
         position: absolute;
         gap: 20px;
     }
 
-    .todoappcontainer .todoapp .profile{
+    .todoappcontainers .todoapp .profile{
         gap: 15px;
         width: 95%;
         margin: 0 auto;
         padding-top: 10px;
     }
 
-    .todoappcontainer .todoapp .profile i{
+    .todoappcontainers .todoapp .profile i{
         font-size: 4em;
         color: #000000c0;
     }
 
-    .todoappcontainer .todoapp .profile .info h1{
+    .todoappcontainers .todoapp .profile .info h1{
         font-size: 1.4em;
     }
 
-    .todoappcontainer .todoapp .profile .info p{
+    .todoappcontainers .todoapp .profile .info p{
         font-size: 1.5em;
     }
 
@@ -612,46 +630,46 @@ hr{
         width: 70%;
     }
 
-    .todoappcontainer .todoapp .taskInfo{
+    .todoappcontainers .todoapp .taskInfo{
         padding: 15px 10px;
     }
 
-    .todoappcontainer .todoapp .right{
+    .todoappcontainers .todoapp .right{
         padding: 15px;
     }
 
-    .todoappcontainer .todoapp .right i{
+    .todoappcontainers .todoapp .right i{
         top: 20px;
         right: 25px;
         display: block;
         cursor: pointer;
     }
 
-    .todoappcontainer .todoapp .right .rightContent{
+    .todoappcontainers .todoapp .right .rightContent{
         width: 100%;
         height: 100%;
         gap: 30px;
     }
 
-    .todoappcontainer .todoapp .right .rightContent .taskList{
+    .todoappcontainers .todoapp .right .rightContent .taskList{
         width: 100%;
         gap: 30px;
     }
 
-    .todoappcontainer .todoapp .right .rightContent .taskList  h1{
+    .todoappcontainers .todoapp .right .rightContent .taskList  h1{
         font-size: 1.8em;
     }
 
-    .todoappcontainer .todoapp .right .rightContent .taskList .output{
+    .todoappcontainers .todoapp .right .rightContent .taskList .output{
         gap: 25px;
         width: 95%;
     }
 
-    .todoappcontainer .todoapp .right .rightContent .taskList .output div{
+    .todoappcontainers .todoapp .right .rightContent .taskList .output div{
         border-radius: 8px;
     }
 
-    .todoappcontainer .addingTask{
+    .todoappcontainers .addingTask{
        top: 100px;
        width: 90%;;
     }
