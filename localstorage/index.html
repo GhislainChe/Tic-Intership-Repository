@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+        localStorage.setItem("username", "Ghislain")
+        let name = localStorage.getItem("username")
+        document.write(name)
+
+        localStorage.setItem("score", 30)
+        let score = localStorage.getItem("score")
+        console.log(typeof score)
+        console.log(score)
+
+        let fruits = ['apple', 'banana', 'orange'];
+        localStorage.setItem("fruits", JSON.stringify(fruits));
+        let savedFruits = JSON.parse(localStorage.getItem("fruits"));
+        console.log(savedFruits)
+   </script>
+</body>
+</html>
