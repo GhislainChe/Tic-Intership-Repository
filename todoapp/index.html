@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         <div class="but">
-                            <p>Have an Acount? <span>Login</span></p>
+                            <p>Have an Acount? <span id="span">Login</span></p>
                             <button type="submit">Sign Up</button>
                         </div>
                     </form>
@@ -133,9 +133,27 @@
         let hide = document.getElementById('hide')
         let mainContainer = document.getElementById('mainContainer')
         let form = document.getElementById('forms')
-        
+        let login = document.getElementById('login')
+        let span = document.getElementById('span')
+        let signups = document.getElementById('signups')
+        span.addEventListener('click', function(){
+            if(login.style.display == 'none'){
+                login.style.display = 'block'
+                signups.style.display = 'none'
+                span.innerText = "Register"
+            }
+            else{
+                signups.style.display = 'block'
+                login.style.display = 'none'
+                span.innerText = 'Login'
+            }
+        })
         form.addEventListener('submit', function(ev){
             ev.preventDefault()
+
+            
+
+
             let userEmail = document.getElementById('Useremail').value
             let password = document.getElementById('password').value
             let loginMsg = document.getElementById('loginMsg')
@@ -172,6 +190,7 @@
                 }, 3500)
                 return;
             }
+            // console.log('hello')
 
             hide.style.display = 'none'
             mainContainer.style.display = 'block'
