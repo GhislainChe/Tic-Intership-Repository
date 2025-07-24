@@ -168,7 +168,13 @@
             if(userName.length > 8){
                 userName = userName.substring(0, 8) + '...'
             }
-            usa.innerText = userName
+
+            // var pass = localStorage.setItem
+            localStorage.setItem("userName", userName)
+            localStorage.setItem("pass", password)
+            localStorage.setItem("email", userEmail)
+            let names = localStorage.getItem("userName")
+            usa.innerText = names
 
         })
 
@@ -197,6 +203,13 @@
             let time = document.getElementById('time').value;
             let message = document.getElementById('message')
             let errorMessage = document.getElementById('errorMessage')
+
+            localStorage.setItem("Tname", name)
+            localStorage.setItem("Tdate", date)
+            localStorage.setItem("Ttime", time)
+            let Tname = localStorage.getItem("Tname")
+            let Ttime = localStorage.getItem("Ttime")
+
             if(name === "" || date === "" || time === ""){
                 message.style.display = 'block'
                 errorMessage.textContent = 'You must enter all the field'
@@ -210,14 +223,14 @@
             container.classList.add('taskBox');
             let h1 = document.createElement('h1');
             h1.classList.add('taskTitle');
-            h1.textContent = name
+            h1.textContent = Tname
             let span = document.createElement('span');
             span.classList.add('time');
             let h2 = document.createElement('h2');
             h2.classList.add('taskTime');
-            h2.textContent = time
+            h2.textContent = Ttime
             let checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';;
+            checkbox.type = 'checkbox';
             checkbox.classList.add('taskComplete');
 
             span.appendChild(h2);
