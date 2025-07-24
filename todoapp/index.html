@@ -36,12 +36,12 @@
                                     <input type="password" name="password" id="password">
                                 </label><br>
                             </div>
-                            <div class="login" id="login">
-                                <label for="password">Email <br>
-                                    <input type="email" name="password" id="password">
+                            <div class="login" id="login" style="display:none;">
+                                <label for="LoginEmail">Email <br>
+                                    <input type="email" name="loginemail" id="LoginEmail">
                                 </label><br>
-                                <label for="password">Password <br>
-                                    <input type="password" name="password" id="password">
+                                <label for="LoginPassword">Password <br>
+                                    <input type="password" name="loginpassword" id="LoginPassword">
                                 </label><br>
                             </div>
                         </div>
@@ -150,47 +150,104 @@
         })
         form.addEventListener('submit', function(ev){
             ev.preventDefault()
-
-            
-
-
             let userEmail = document.getElementById('Useremail').value
             let password = document.getElementById('password').value
             let loginMsg = document.getElementById('loginMsg')
             var userName = document.getElementById('Username').value
-            if(userName === "" || userEmail === "" || password === ""){
-                loginMsg.style.display = 'block'
-                loginMsg.textContent = 'You must fill in all Fields'
-                setTimeout(() => {
-                    loginMsg.style.display = 'none';
-                }, 3500)
-                return;
+            let LoginEmail = document.getElementById('LoginEmail').value
+            let LoginPassword = document.getElementById('LoginPassword').value
+            // localStorage.setItem("userName", userName)
+            // localStorage.setItem("pass", password)
+            // localStorage.setItem("email", userEmail)
+            let names = localStorage.getItem("userName")
+            let pass = localStorage.getItem("pass")
+            let email = localStorage.getItem("email")
+
+            if(login.style.display == 'block'){
+                if(LoginEmail === "" || LoginPassword === ""){
+                    loginMsg.style.display = 'block'
+                    loginMsg.textContent = 'You must fill in all Fields'
+                    setTimeout(() => {
+                        loginMsg.style.display = 'none';
+                    }, 3500)
+                    return;
+                }
+
+                if(LoginPassword.length < 6){
+                    let LoginPasswords = document.getElementById('LoginPassword')
+                    loginMsg.style.display = 'block'
+                    loginMsg.textContent = 'Password Must be At least 6 Characters'
+                    passwords.style.border = '1px solid red'
+                    setTimeout(() => {
+                        loginMsg.style.display = 'none';
+                        LoginPasswords.style.border = '1px solid blue'
+                    }, 3500)
+                    return;
+                }
+
+                if(!LoginEmail.includes("@") || !LoginEmail.includes(".")){
+                    let LoginEmails = document.getElementById('LoginEmail')
+                    loginMsg.style.display = 'block'
+                    loginMsg.textContent = 'Invalid Email Format'
+                    // passwords.style.border = '1px solid red'
+                    setTimeout(() => {
+                        loginMsg.style.display = 'none';
+                        LoginEmails.style.border = '1px solid blue'
+                    }, 3500)
+                    return;
+                }
+
+                if(LoginPassword !== pass || LoginEmail !== email){
+                    loginMsg.textContent = 'Password and Email does not match'
+                    setTimeout(() => {
+                        loginMsg.style.display = 'none';
+                        passwords.style.border = '1px solid blue'
+                    }, 3500)
+                    return;
+                }
+
+                loginMsg.textContent = 'Login Success'
+            }
+            else if(signups.style.display == 'block'){
+                if(userName === "" || userEmail === "" || password === ""){
+                    loginMsg.style.display = 'block'
+                    loginMsg.textContent = 'You must fill in all Fields'
+                    setTimeout(() => {
+                        loginMsg.style.display = 'none';
+                    }, 3500)
+                    return;
+                }
+
+                if(password.length < 6){
+                    let passwords = document.getElementById('password')
+                    loginMsg.style.display = 'block'
+                    loginMsg.textContent = 'Password Must be At least 6 Characters'
+                    passwords.style.border = '1px solid red'
+                    setTimeout(() => {
+                        loginMsg.style.display = 'none';
+                        passwords.style.border = '1px solid blue'
+                    }, 3500)
+                    return;
+                }
+
+                if(!userEmail.includes("@") || !userEmail.includes(".")){
+                    let passwords = document.getElementById('Useremail')
+                    loginMsg.style.display = 'block'
+                    loginMsg.textContent = 'Invalid Email Format'
+                    passwords.style.border = '1px solid red'
+                    setTimeout(() => {
+                        loginMsg.style.display = 'none';
+                        passwords.style.border = '1px solid blue'
+                    }, 3500)
+                    return;
+                }
+
+                localStorage.setItem("userName", userName);
+                localStorage.setItem("pass", password);
+                localStorage.setItem("email", userEmail);
+                loginMsg.textContent = 'Succesfully Registered'
             }
 
-            if(password.length < 6){
-                let passwords = document.getElementById('password')
-                loginMsg.style.display = 'block'
-                loginMsg.textContent = 'Password Must be At least 6 Characters'
-                passwords.style.border = '1px solid red'
-                setTimeout(() => {
-                    loginMsg.style.display = 'none';
-                    passwords.style.border = '1px solid blue'
-                }, 3500)
-                return;
-            }
-
-            if(!userEmail.includes("@") || !userEmail.includes(".")){
-                let passwords = document.getElementById('Useremail')
-                loginMsg.style.display = 'block'
-                loginMsg.textContent = 'Invalid Email Format'
-                passwords.style.border = '1px solid red'
-                setTimeout(() => {
-                    loginMsg.style.display = 'none';
-                    passwords.style.border = '1px solid blue'
-                }, 3500)
-                return;
-            }
-            // console.log('hello')
 
             hide.style.display = 'none'
             mainContainer.style.display = 'block'
@@ -199,10 +256,6 @@
                 userName = userName.substring(0, 8) + '...'
             }
 
-            localStorage.setItem("userName", userName)
-            localStorage.setItem("pass", password)
-            localStorage.setItem("email", userEmail)
-            let names = localStorage.getItem("userName")
             usa.innerText = names
 
         })
@@ -233,40 +286,45 @@
             let message = document.getElementById('message')
             let errorMessage = document.getElementById('errorMessage')
 
-            localStorage.setItem("Tname", name)
-            localStorage.setItem("Tdate", date)
-            localStorage.setItem("Ttime", time)
-            let Tname = localStorage.getItem("Tname")
-            let Ttime = localStorage.getItem("Ttime")
+            // localStorage.setItem("Tname", name)
+            // localStorage.setItem("Tdate", date)
+            // localStorage.setItem("Ttime", time)
+            // let Tname = localStorage.getItem("Tname")
+            // let Ttime = localStorage.getItem("Ttime")
 
             if(name === "" || date === "" || time === ""){
                 message.style.display = 'block'
                 errorMessage.textContent = 'You must enter all the field'
                 setTimeout(() =>{
                     message.style.display = 'none'
-                }, 5000)
+                }, 3000)
                 return;
             }
 
-            let container = document.createElement('div');
-            container.classList.add('taskBox');
-            let h1 = document.createElement('h1');
-            h1.classList.add('taskTitle');
-            h1.textContent = Tname
-            let span = document.createElement('span');
-            span.classList.add('time');
-            let h2 = document.createElement('h2');
-            h2.classList.add('taskTime');
-            h2.textContent = Ttime
-            let checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.classList.add('taskComplete');
+            // let container = document.createElement('div');
+            // container.classList.add('taskBox');
+            // let h1 = document.createElement('h1');
+            // h1.classList.add('taskTitle');
+            // h1.textContent = Tname
+            // let span = document.createElement('span');
+            // span.classList.add('time');
+            // let h2 = document.createElement('h2');
+            // h2.classList.add('taskTime');
+            // h2.textContent = Ttime
+            // let checkbox = document.createElement('input');
+            // checkbox.type = 'checkbox';
+            // checkbox.classList.add('taskComplete');
 
-            span.appendChild(h2);
-            span.appendChild(checkbox);
-            container.appendChild(h1);
-            container.appendChild(span);
-            output.appendChild(container);
+            // span.appendChild(h2);
+            // span.appendChild(checkbox);
+            // container.appendChild(h1);
+            // container.appendChild(span);
+            // output.appendChild(container);
+
+            const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+            tasks.push({ name, date, time });
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            displayTask({ name, time });
 
             taskForm.reset();
             let addingTask = document.getElementById('addingTask');
@@ -279,6 +337,38 @@
                 message.style.display = 'none';
             }, 3500)
         })
+
+        function displayTask(task) {
+            const output = document.getElementById('output');
+            const container = document.createElement('div');
+            container.classList.add('taskBox');
+
+            const h1 = document.createElement('h1');
+            h1.classList.add('taskTitle');
+            h1.textContent = task.name;
+
+            const span = document.createElement('span');
+            span.classList.add('time');
+
+            const h2 = document.createElement('h2');
+            h2.classList.add('taskTime');
+            h2.textContent = task.time;
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.classList.add('taskComplete');
+
+            span.appendChild(h2);
+            span.appendChild(checkbox);
+            container.appendChild(h1);
+            container.appendChild(span);
+            output.appendChild(container);
+        }
+
+        function loadTasks() {
+          const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+          tasks.forEach(displayTask);
+        }
 
         let menu = document.getElementById('toogle-menu')
         menu.addEventListener('click', function(){
