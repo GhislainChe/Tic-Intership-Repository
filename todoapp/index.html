@@ -25,18 +25,29 @@
                 <div class="right">
                     <form action="" id="forms">
                         <div class="forming">
-                            <label for="email">Username <br>
-                                <input type="Text" name="name" id="Username">
-                            </label><br>
-                            <label for="email">Email <br>
-                                <input type="email" name="email" id="Useremail">
-                            </label> <br>
-                            <label for="password">Password <br>
-                                <input type="password" name="password" id="password">
-                            </label><br>
+                            <div class="signups" id="signups">
+                                <label for="email">Username <br>
+                                    <input type="Text" name="name" id="Username">
+                                </label><br>
+                                <label for="email">Email <br>
+                                    <input type="email" name="email" id="Useremail">
+                                </label> <br>
+                                <label for="password">Password <br>
+                                    <input type="password" name="password" id="password">
+                                </label><br>
+                            </div>
+                            <div class="login" id="login">
+                                <label for="password">Email <br>
+                                    <input type="email" name="password" id="password">
+                                </label><br>
+                                <label for="password">Password <br>
+                                    <input type="password" name="password" id="password">
+                                </label><br>
+                            </div>
                         </div>
                         <div class="but">
-                            <button type="submit">Sign In</button>
+                            <p>Have an Acount? <span>Login</span></p>
+                            <button type="submit">Sign Up</button>
                         </div>
                     </form>
                 </div>
@@ -169,7 +180,6 @@
                 userName = userName.substring(0, 8) + '...'
             }
 
-            // var pass = localStorage.setItem
             localStorage.setItem("userName", userName)
             localStorage.setItem("pass", password)
             localStorage.setItem("email", userEmail)
