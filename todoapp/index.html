@@ -1,409 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ghislain | Todo app</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="https://kit.fontawesome.com/95ebfc49eb.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="index.css" />
+    <script
+      src="https://kit.fontawesome.com/95ebfc49eb.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <div class="container">
-        <div class="content" id="hide">
-            <p id="loginMsg"></p>
-            <div class="signup">
-                <div class="left">
-                    <i class="fa-solid fa-list-check"></i>
-                    <h1>Register</h1>
-                    <p>Create your Ghislain's Account</p>
-                    <ul>
-                        <li>Create your Tasks</li>
-                        <li>Complete Your Tasks</li>
-                        <li>Mark your Tasks</li>
-                    </ul>
+      <div class="content" id="hide">
+        <p id="loginMsg"></p>
+        <div class="signup">
+          <div class="left">
+            <i class="fa-solid fa-list-check"></i>
+            <h1>Register</h1>
+            <p>Create your Ghislain's Account</p>
+            <ul>
+              <li>Create your Tasks</li>
+              <li>Complete Your Tasks</li>
+              <li>Mark your Tasks</li>
+            </ul>
+          </div>
+          <div class="right">
+            <form action="" id="forms">
+              <div class="forming">
+                <div class="signups" id="signups">
+                  <label for="email"
+                    >Username <br />
+                    <input type="Text" name="name" id="Username" /> </label
+                  ><br />
+                  <label for="email"
+                    >Email <br />
+                    <input type="email" name="email" id="Useremail" />
+                  </label>
+                  <br />
+                  <label for="password"
+                    >Password <br />
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                    /> </label
+                  ><br />
                 </div>
-                <div class="right">
-                    <form action="" id="forms">
-                        <div class="forming">
-                            <div class="signups" id="signups">
-                                <label for="email">Username <br>
-                                    <input type="Text" name="name" id="Username">
-                                </label><br>
-                                <label for="email">Email <br>
-                                    <input type="email" name="email" id="Useremail">
-                                </label> <br>
-                                <label for="password">Password <br>
-                                    <input type="password" name="password" id="password">
-                                </label><br>
-                            </div>
-                            <div class="login" id="login" style="display:none;">
-                                <label for="LoginEmail">Email <br>
-                                    <input type="email" name="loginemail" id="LoginEmail">
-                                </label><br>
-                                <label for="LoginPassword">Password <br>
-                                    <input type="password" name="loginpassword" id="LoginPassword">
-                                </label><br>
-                            </div>
-                        </div>
-                        <div class="but">
-                            <p>Have an Acount? <span id="span">Login</span></p>
-                            <button type="submit">Sign Up</button>
-                        </div>
-                    </form>
+                <div class="login" id="login" style="display: none">
+                  <label for="LoginEmail"
+                    >Email <br />
+                    <input
+                      type="email"
+                      name="loginemail"
+                      id="LoginEmail"
+                    /> </label
+                  ><br />
+                  <label for="LoginPassword"
+                    >Password <br />
+                    <input
+                      type="password"
+                      name="loginpassword"
+                      id="LoginPassword"
+                    /> </label
+                  ><br />
                 </div>
-            </div>
+              </div>
+              <div class="but">
+                <p>Have an Acount? <span id="span">Login</span></p>
+                <button type="submit">Sign Up</button>
+              </div>
+            </form>
+          </div>
         </div>
-        <div class="todoappcontainer" id="mainContainer">
-            <div class="todoappcontainers">
-                <div class="todoapp">
-                    <div class="left" id="left-side">
-                        <div class="profile">
-                            <i class="fa-solid fa-circle-user"></i>
-                            <div class="info">
-                                <h1>do-it</h1>
-                                <p id="usersName">User</p>
-                            </div>
-                            <i class="fa-solid fa-xmark" id="close"></i>
-                        </div>
-                        <hr>
-                        <div class="taskInfo">
-                            <div class="infor">
-                                <div class="infoheader">
-                                    <i class="fa-solid fa-calendar"></i>
-                                    <h1>Today's Tasks</h1>
-                                </div>
-                                <div class="infoheader">
-                                    <i class="fa-solid fa-clock"></i>
-                                    <h1>Scheduled Tasks</h1>
-                                </div>
-                                <div class="infoheader">
-                                    <i class="fa-solid fa-gear"></i>
-                                    <h1>Settings</h1>
-                                </div>
-                            </div>
-                            <div class="out">
-                                <i class="fa-solid fa-right-from-bracket"></i>
-                                <p>Sign Out</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <div class="rightContent">
-                            <div class="taskList">
-                                <h1>Your Tasks</h1>
-                                <i class="fa-solid fa-bars" id="toogle-menu"></i>
-                                <div class="output" id="output">
-                                
-                                </div>
-                            </div>
-                            <div class="addTask">
-                                <button id="addTasks">Add Task</button>
-                            </div>
-                        </div>
-                    </div>
+      </div>
+      <div class="todoappcontainer" id="mainContainer">
+        <div class="todoappcontainers">
+          <div class="todoapp">
+            <div class="left" id="left-side">
+              <div class="profile">
+                <i class="fa-solid fa-circle-user"></i>
+                <div class="info">
+                  <h1>do-it</h1>
+                  <p id="usersName">User</p>
                 </div>
-                <div class="addingTask" id="addingTask">
-                    <form action="" id="taskForm">
-                        <label for="">Task Name: <br>
-                            <input type="text" name="name" id="name">
-                        </label>
-                        <div class="datetime">
-                            <label for="">Task Date: <br>
-                                <input type="date" name="date" id="date">
-                            </label>
-                            <label for="">Task Time: <br>
-                                <input type="time" name="time" id="time">
-                            </label>
-                        </div>
-                        <div class="button">
-                            <button type="reset" id="cancel">Cancel</button>
-                            <button type="submit">Create Task</button>
-                        </div>
-                    </form>
+                <i class="fa-solid fa-xmark" id="close"></i>
+              </div>
+              <hr />
+              <div class="taskInfo">
+                <div class="infor">
+                  <div class="infoheader">
+                    <i class="fa-solid fa-calendar"></i>
+                    <h1>Today's Tasks</h1>
+                  </div>
+                  <div class="infoheader">
+                    <i class="fa-solid fa-clock"></i>
+                    <h1>Scheduled Tasks</h1>
+                  </div>
+                  <div class="infoheader">
+                    <i class="fa-solid fa-gear"></i>
+                    <h1>Settings</h1>
+                  </div>
                 </div>
-                <div class="message" id="message">
-                    <h1 id="errorMessage">Task Created Succesfully</h1>
+                <div class="out">
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                  <p>Sign Out</p>
                 </div>
-                <div class="overlay" id="overlay"></div>
+              </div>
             </div>
+            <div class="right">
+              <div class="rightContent">
+                <div class="taskList">
+                  <h1>Your Tasks</h1>
+                  <i class="fa-solid fa-bars" id="toogle-menu"></i>
+                  <div class="output" id="output"></div>
+                </div>
+                <div class="addTask">
+                  <button id="addTasks">Add Task</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="addingTask" id="addingTask">
+            <form action="" id="taskForm">
+              <label for=""
+                >Task Name: <br />
+                <input type="text" name="name" id="name" />
+              </label>
+              <div class="datetime">
+                <label for=""
+                  >Task Date: <br />
+                  <input type="date" name="date" id="date" />
+                </label>
+                <label for=""
+                  >Task Time: <br />
+                  <input type="time" name="time" id="time" />
+                </label>
+              </div>
+              <div class="button">
+                <button type="reset" id="cancel">Cancel</button>
+                <button type="submit">Create Task</button>
+              </div>
+            </form>
+          </div>
+          <div class="message" id="message">
+            <h1 id="errorMessage">Task Created Succesfully</h1>
+          </div>
+          <div class="overlay" id="overlay"></div>
         </div>
+      </div>
     </div>
 
     <script>
-        let hide = document.getElementById('hide')
-        let mainContainer = document.getElementById('mainContainer')
-        let form = document.getElementById('forms')
-        let login = document.getElementById('login')
-        let span = document.getElementById('span')
-        let signups = document.getElementById('signups')
-        span.addEventListener('click', function(){
-            if(login.style.display == 'none'){
-                login.style.display = 'block'
-                signups.style.display = 'none'
-                span.innerText = "Register"
-            }
-            else{
-                signups.style.display = 'block'
-                login.style.display = 'none'
-                span.innerText = 'Login'
-            }
-        })
-        form.addEventListener('submit', function(ev){
-            ev.preventDefault()
-            let userEmail = document.getElementById('Useremail').value
-            let password = document.getElementById('password').value
-            let loginMsg = document.getElementById('loginMsg')
-            var userName = document.getElementById('Username').value
-            let LoginEmail = document.getElementById('LoginEmail').value
-            let LoginPassword = document.getElementById('LoginPassword').value
-            // localStorage.setItem("userName", userName)
-            // localStorage.setItem("pass", password)
-            // localStorage.setItem("email", userEmail)
-            let names = localStorage.getItem("userName")
-            let pass = localStorage.getItem("pass")
-            let email = localStorage.getItem("email")
+      let hide = document.getElementById("hide");
+      let mainContainer = document.getElementById("mainContainer");
+      let form = document.getElementById("forms");
+      let login = document.getElementById("login");
+      let span = document.getElementById("span");
+      let signups = document.getElementById("signups");
+      span.addEventListener("click", function () {
+        if (login.style.display == "none") {
+          login.style.display = "block";
+          signups.style.display = "none";
+          span.innerText = "Register";
+        } else {
+          signups.style.display = "block";
+          login.style.display = "none";
+          span.innerText = "Login";
+        }
+      });
+      form.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        let userEmail = document.getElementById("Useremail").value;
+        let password = document.getElementById("password").value;
+        let loginMsg = document.getElementById("loginMsg");
+        var userName = document.getElementById("Username").value;
+        let LoginEmail = document.getElementById("LoginEmail").value;
+        let LoginPassword = document.getElementById("LoginPassword").value;
+        // localStorage.setItem("userName", userName)
+        // localStorage.setItem("pass", password)
+        // localStorage.setItem("email", userEmail)
+        let names = localStorage.getItem("userName");
+        let pass = localStorage.getItem("pass");
+        let email = localStorage.getItem("email");
 
-            if(login.style.display == 'block'){
-                if(LoginEmail === "" || LoginPassword === ""){
-                    loginMsg.style.display = 'block'
-                    loginMsg.textContent = 'You must fill in all Fields'
-                    setTimeout(() => {
-                        loginMsg.style.display = 'none';
-                    }, 3500)
-                    return;
-                }
-
-                if(LoginPassword.length < 6){
-                    let LoginPasswords = document.getElementById('LoginPassword')
-                    loginMsg.style.display = 'block'
-                    loginMsg.textContent = 'Password Must be At least 6 Characters'
-                    passwords.style.border = '1px solid red'
-                    setTimeout(() => {
-                        loginMsg.style.display = 'none';
-                        LoginPasswords.style.border = '1px solid blue'
-                    }, 3500)
-                    return;
-                }
-
-                if(!LoginEmail.includes("@") || !LoginEmail.includes(".")){
-                    let LoginEmails = document.getElementById('LoginEmail')
-                    loginMsg.style.display = 'block'
-                    loginMsg.textContent = 'Invalid Email Format'
-                    // passwords.style.border = '1px solid red'
-                    setTimeout(() => {
-                        loginMsg.style.display = 'none';
-                        LoginEmails.style.border = '1px solid blue'
-                    }, 3500)
-                    return;
-                }
-
-                if(LoginPassword !== pass || LoginEmail !== email){
-                    loginMsg.textContent = 'Password and Email does not match'
-                    setTimeout(() => {
-                        loginMsg.style.display = 'none';
-                        passwords.style.border = '1px solid blue'
-                    }, 3500)
-                    return;
-                }
-
-                loginMsg.textContent = 'Login Success'
-            }
-            else if(signups.style.display == 'block'){
-                if(userName === "" || userEmail === "" || password === ""){
-                    loginMsg.style.display = 'block'
-                    loginMsg.textContent = 'You must fill in all Fields'
-                    setTimeout(() => {
-                        loginMsg.style.display = 'none';
-                    }, 3500)
-                    return;
-                }
-
-                if(password.length < 6){
-                    let passwords = document.getElementById('password')
-                    loginMsg.style.display = 'block'
-                    loginMsg.textContent = 'Password Must be At least 6 Characters'
-                    passwords.style.border = '1px solid red'
-                    setTimeout(() => {
-                        loginMsg.style.display = 'none';
-                        passwords.style.border = '1px solid blue'
-                    }, 3500)
-                    return;
-                }
-
-                if(!userEmail.includes("@") || !userEmail.includes(".")){
-                    let passwords = document.getElementById('Useremail')
-                    loginMsg.style.display = 'block'
-                    loginMsg.textContent = 'Invalid Email Format'
-                    passwords.style.border = '1px solid red'
-                    setTimeout(() => {
-                        loginMsg.style.display = 'none';
-                        passwords.style.border = '1px solid blue'
-                    }, 3500)
-                    return;
-                }
-
-                localStorage.setItem("userName", userName);
-                localStorage.setItem("pass", password);
-                localStorage.setItem("email", userEmail);
-                loginMsg.textContent = 'Succesfully Registered'
-            }
-
-
-            hide.style.display = 'none';
-            mainContainer.style.display = 'block';
-            let usa = document.getElementById('usersName');
-            let displayName = "";
-            if (login.style.display == 'block') {
-                displayName = localStorage.getItem("userName") || "User";
-            } else {
-                displayName = userName;
-            }
-            if(displayName.length > 8){
-                displayName = displayName.substring(0, 8) + '...';
-            }
-            usa.innerText = displayName;
-
-        })
-
-        let addTasks = document.getElementById('addTasks');
-        addTasks.addEventListener('click', function() {
-            let addingTask = document.getElementById('addingTask');
-            let overlay = document.getElementById('overlay');
-            overlay.style.display = "block";
-            addingTask.style.display = "block";
-        })
-        let cancel = document.getElementById('cancel').addEventListener('click', function(){
-            let addingTask = document.getElementById('addingTask');
-            let overlay = document.getElementById('overlay');
-            overlay.style.display = "none";
-            addingTask.style.display = "none"
-        })
-        let taskForm = document.getElementById('taskForm')
-        // let name = document.getElementById('name')
-        // let date = document.getElementById('date')
-        // let time = document.getElementById('time')
-        let output = document.getElementById('output')
-        taskForm.addEventListener('submit', function(e){
-            e.preventDefault()
-            let name = document.getElementById('name').value;
-            let date = document.getElementById('date').value;
-            let time = document.getElementById('time').value;
-            let message = document.getElementById('message')
-            let errorMessage = document.getElementById('errorMessage')
-
-            // localStorage.setItem("Tname", name)
-            // localStorage.setItem("Tdate", date)
-            // localStorage.setItem("Ttime", time)
-            // let Tname = localStorage.getItem("Tname")
-            // let Ttime = localStorage.getItem("Ttime")
-
-            if(name === "" || date === "" || time === ""){
-                message.style.display = 'block'
-                errorMessage.textContent = 'You must enter all the field'
-                setTimeout(() =>{
-                    message.style.display = 'none'
-                }, 3000)
-                return;
-            }
-
-            // let container = document.createElement('div');
-            // container.classList.add('taskBox');
-            // let h1 = document.createElement('h1');
-            // h1.classList.add('taskTitle');
-            // h1.textContent = Tname
-            // let span = document.createElement('span');
-            // span.classList.add('time');
-            // let h2 = document.createElement('h2');
-            // h2.classList.add('taskTime');
-            // h2.textContent = Ttime
-            // let checkbox = document.createElement('input');
-            // checkbox.type = 'checkbox';
-            // checkbox.classList.add('taskComplete');
-
-            // span.appendChild(h2);
-            // span.appendChild(checkbox);
-            // container.appendChild(h1);
-            // container.appendChild(span);
-            // output.appendChild(container);
-
-            const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-            tasks.push({ name, date, time });
-            localStorage.setItem("tasks", JSON.stringify(tasks));
-            displayTask({ name, time });
-
-            taskForm.reset();
-            let addingTask = document.getElementById('addingTask');
-            let overlay = document.getElementById('overlay');
-            overlay.style.display = 'none'
-            addingTask.style.display = 'none'
-            message.style.display = 'block'
-            errorMessage.textContent = 'Task Created Succesfully'
+        if (login.style.display == "block") {
+          if (LoginEmail === "" || LoginPassword === "") {
+            loginMsg.style.display = "block";
+            loginMsg.textContent = "You must fill in all Fields";
             setTimeout(() => {
-                message.style.display = 'none';
-            }, 3500)
-        })
+              loginMsg.style.display = "none";
+            }, 3500);
+            return;
+          }
 
-        function displayTask(task) {
-            const output = document.getElementById('output');
-            const container = document.createElement('div');
-            container.classList.add('taskBox');
+          if (LoginPassword.length < 6) {
+            let LoginPasswords = document.getElementById("LoginPassword");
+            loginMsg.style.display = "block";
+            loginMsg.textContent = "Password Must be At least 6 Characters";
+            passwords.style.border = "1px solid red";
+            setTimeout(() => {
+              loginMsg.style.display = "none";
+              LoginPasswords.style.border = "1px solid blue";
+            }, 3500);
+            return;
+          }
 
-            const h1 = document.createElement('h1');
-            h1.classList.add('taskTitle');
-            h1.textContent = task.name;
+          if (!LoginEmail.includes("@") || !LoginEmail.includes(".")) {
+            let LoginEmails = document.getElementById("LoginEmail");
+            loginMsg.style.display = "block";
+            loginMsg.textContent = "Invalid Email Format";
+            // passwords.style.border = '1px solid red'
+            setTimeout(() => {
+              loginMsg.style.display = "none";
+              LoginEmails.style.border = "1px solid blue";
+            }, 3500);
+            return;
+          }
 
-            const span = document.createElement('span');
-            span.classList.add('time');
+          if (LoginPassword !== pass || LoginEmail !== email) {
+            loginMsg.textContent = "Password and Email does not match";
+            setTimeout(() => {
+              loginMsg.style.display = "none";
+              passwords.style.border = "1px solid blue";
+            }, 3500);
+            return;
+          }
 
-            const h2 = document.createElement('h2');
-            h2.classList.add('taskTime');
-            h2.textContent = task.time;
+          loginMsg.textContent = "Login Success";
+        } else if (signups.style.display == "block") {
+          if (userName === "" || userEmail === "" || password === "") {
+            loginMsg.style.display = "block";
+            loginMsg.textContent = "You must fill in all Fields";
+            setTimeout(() => {
+              loginMsg.style.display = "none";
+            }, 3500);
+            return;
+          }
 
-            const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.classList.add('taskComplete');
+          if (password.length < 6) {
+            let passwords = document.getElementById("password");
+            loginMsg.style.display = "block";
+            loginMsg.textContent = "Password Must be At least 6 Characters";
+            passwords.style.border = "1px solid red";
+            setTimeout(() => {
+              loginMsg.style.display = "none";
+              passwords.style.border = "1px solid blue";
+            }, 3500);
+            return;
+          }
 
-            span.appendChild(h2);
-            span.appendChild(checkbox);
-            container.appendChild(h1);
-            container.appendChild(span);
-            output.appendChild(container);
+          if (!userEmail.includes("@") || !userEmail.includes(".")) {
+            let passwords = document.getElementById("Useremail");
+            loginMsg.style.display = "block";
+            loginMsg.textContent = "Invalid Email Format";
+            passwords.style.border = "1px solid red";
+            setTimeout(() => {
+              loginMsg.style.display = "none";
+              passwords.style.border = "1px solid blue";
+            }, 3500);
+            return;
+          }
+
+          localStorage.setItem("userName", userName);
+          localStorage.setItem("pass", password);
+          localStorage.setItem("email", userEmail);
+          loginMsg.textContent = "Succesfully Registered";
         }
 
-        function loadTasks() {
-          const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-          tasks.forEach(displayTask);
+        hide.style.display = "none";
+        mainContainer.style.display = "block";
+        let usa = document.getElementById("usersName");
+        let displayName = "";
+        if (login.style.display == "block") {
+          displayName = localStorage.getItem("userName") || "User";
+        } else {
+          displayName = userName;
+        }
+        if (displayName.length > 8) {
+          displayName = displayName.substring(0, 8) + "...";
+        }
+        usa.innerText = displayName;
+      });
+
+      let addTasks = document.getElementById("addTasks");
+      addTasks.addEventListener("click", function () {
+        let addingTask = document.getElementById("addingTask");
+        let overlay = document.getElementById("overlay");
+        overlay.style.display = "block";
+        addingTask.style.display = "block";
+      });
+      let cancel = document
+        .getElementById("cancel")
+        .addEventListener("click", function () {
+          let addingTask = document.getElementById("addingTask");
+          let overlay = document.getElementById("overlay");
+          overlay.style.display = "none";
+          addingTask.style.display = "none";
+        });
+      let taskForm = document.getElementById("taskForm");
+      // let name = document.getElementById('name')
+      // let date = document.getElementById('date')
+      // let time = document.getElementById('time')
+      let output = document.getElementById("output");
+      taskForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let name = document.getElementById("name").value;
+        let date = document.getElementById("date").value;
+        let time = document.getElementById("time").value;
+        let message = document.getElementById("message");
+        let errorMessage = document.getElementById("errorMessage");
+
+        // localStorage.setItem("Tname", name)
+        // localStorage.setItem("Tdate", date)
+        // localStorage.setItem("Ttime", time)
+        // let Tname = localStorage.getItem("Tname")
+        // let Ttime = localStorage.getItem("Ttime")
+
+        if (name === "" || date === "" || time === "") {
+          message.style.display = "block";
+          errorMessage.textContent = "You must enter all the field";
+          setTimeout(() => {
+            message.style.display = "none";
+          }, 3000);
+          return;
         }
 
-        let menu = document.getElementById('toogle-menu')
-        menu.addEventListener('click', function(){
-            if(menu.classList.contains('fa-bars')){
-                menu.classList.remove('fa-bars')
-                menu.style.color = 'rgba(96, 146, 255, 0.795)'
-                menu.classList.add('fa-xmark')
-                let leftSide = document.getElementById('left-side')
-                let overlay = document.getElementById('overlay');
-                overlay.style.display = 'block'
-                leftSide.style.display = 'flex'
-                leftSide.style.position = 'absolute'
-                leftSide.style.width = '70%'
-                leftSide.style.right = '1px'
-                leftSide.style.zIndex = '999'
-            }
-            else{
-                menu.classList.remove('fa-xmark')
-                menu.classList.add('fa-bars')
-                menu.style.color = '#fff'
-                let leftSide = document.getElementById('left-side')
-                let overlay = document.getElementById('overlay');
-                overlay.style.display = 'none'
-                leftSide.style.display = 'none'
-                leftSide.style.position = 'none'
-                leftSide.style.width = '70%'
-                leftSide.style.right = '1px'
-                leftSide.style.zIndex = '-1'
-            }
-        })
+        // let container = document.createElement('div');
+        // container.classList.add('taskBox');
+        // let h1 = document.createElement('h1');
+        // h1.classList.add('taskTitle');
+        // h1.textContent = Tname
+        // let span = document.createElement('span');
+        // span.classList.add('time');
+        // let h2 = document.createElement('h2');
+        // h2.classList.add('taskTime');
+        // h2.textContent = Ttime
+        // let checkbox = document.createElement('input');
+        // checkbox.type = 'checkbox';
+        // checkbox.classList.add('taskComplete');
+
+        // span.appendChild(h2);
+        // span.appendChild(checkbox);
+        // container.appendChild(h1);
+        // container.appendChild(span);
+        // output.appendChild(container);
+
+        const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+        tasks.push({ name, date, time });
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        displayTask({ name, time });
+
+        taskForm.reset();
+        let addingTask = document.getElementById("addingTask");
+        let overlay = document.getElementById("overlay");
+        overlay.style.display = "none";
+        addingTask.style.display = "none";
+        message.style.display = "block";
+        errorMessage.textContent = "Task Created Succesfully";
+        setTimeout(() => {
+          message.style.display = "none";
+        }, 3500);
+      });
+
+      function displayTask(task) {
+        const output = document.getElementById("output");
+        const container = document.createElement("div");
+        container.classList.add("taskBox");
+
+        const h1 = document.createElement("h1");
+        h1.classList.add("taskTitle");
+        h1.textContent = task.name;
+
+        const span = document.createElement("span");
+        span.classList.add("time");
+
+        const h2 = document.createElement("h2");
+        h2.classList.add("taskTime");
+        h2.textContent = task.time;
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.classList.add("taskComplete");
+
+        span.appendChild(h2);
+        span.appendChild(checkbox);
+        container.appendChild(h1);
+        container.appendChild(span);
+        output.appendChild(container);
+      }
+
+      function loadTasks() {
+        const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+        tasks.forEach(displayTask);
+      }
+
+      let menu = document.getElementById("toogle-menu");
+      menu.addEventListener("click", function () {
+        if (menu.classList.contains("fa-bars")) {
+          menu.classList.remove("fa-bars");
+          menu.style.color = "rgba(96, 146, 255, 0.795)";
+          menu.classList.add("fa-xmark");
+          let leftSide = document.getElementById("left-side");
+          let overlay = document.getElementById("overlay");
+          overlay.style.display = "block";
+          leftSide.style.display = "flex";
+          leftSide.style.position = "absolute";
+          leftSide.style.width = "70%";
+          leftSide.style.right = "1px";
+          leftSide.style.zIndex = "999";
+        } else {
+          menu.classList.remove("fa-xmark");
+          menu.classList.add("fa-bars");
+          menu.style.color = "#fff";
+          let leftSide = document.getElementById("left-side");
+          let overlay = document.getElementById("overlay");
+          overlay.style.display = "none";
+          leftSide.style.display = "none";
+          leftSide.style.position = "none";
+          leftSide.style.width = "70%";
+          leftSide.style.right = "1px";
+          leftSide.style.zIndex = "-1";
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
