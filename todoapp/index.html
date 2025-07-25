@@ -251,12 +251,17 @@
 
             hide.style.display = 'none'
             mainContainer.style.display = 'block'
-            let usa = document.getElementById('usersName')        
-            if(userName.length > 8){
-                userName = userName.substring(0, 8) + '...'
+            let usa = document.getElementById('usersName')
+            let displayName = ""
+            if (login.style.display == 'block') {
+                displayName = localStorage.getItem("userName") || "User"
+            } else {
+                displayName = userName
             }
-
-            usa.innerText = names
+            if(displayName.length > 8){
+                displayName = displayName.substring(0, 8) + '...'
+            }
+            usa.innerText = displayName
 
         })
 
