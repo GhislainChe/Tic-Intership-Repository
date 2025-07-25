@@ -249,28 +249,28 @@
             }
 
 
-            hide.style.display = 'none'
-            mainContainer.style.display = 'block'
-            let usa = document.getElementById('usersName')
-            let displayName = ""
+            hide.style.display = 'none';
+            mainContainer.style.display = 'block';
+            let usa = document.getElementById('usersName');
+            let displayName = "";
             if (login.style.display == 'block') {
-                displayName = localStorage.getItem("userName") || "User"
+                displayName = localStorage.getItem("userName") || "User";
             } else {
-                displayName = userName
+                displayName = userName;
             }
             if(displayName.length > 8){
-                displayName = displayName.substring(0, 8) + '...'
+                displayName = displayName.substring(0, 8) + '...';
             }
-            usa.innerText = displayName
+            usa.innerText = displayName;
 
         })
 
-        let addTasks = document.getElementById('addTasks')
+        let addTasks = document.getElementById('addTasks');
         addTasks.addEventListener('click', function() {
             let addingTask = document.getElementById('addingTask');
             let overlay = document.getElementById('overlay');
             overlay.style.display = "block";
-            addingTask.style.display = "block"
+            addingTask.style.display = "block";
         })
         let cancel = document.getElementById('cancel').addEventListener('click', function(){
             let addingTask = document.getElementById('addingTask');
