@@ -293,7 +293,8 @@
         let Taname = document.getElementById('name')
         let Tadate = document.getElementById('date')
         let Tatime = document.getElementById('time')
-        let Taoutput = document.getElementById('output')
+        let output = document.getElementById('output')
+        output = JSON.parse
         taskForm.addEventListener('submit', function(e){
             e.preventDefault()
             let name = document.getElementById('name').value;
