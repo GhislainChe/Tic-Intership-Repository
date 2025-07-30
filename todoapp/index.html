@@ -294,7 +294,6 @@
         let Tadate = document.getElementById('date')
         let Tatime = document.getElementById('time')
         let output = document.getElementById('output')
-        output = JSON.parse
         taskForm.addEventListener('submit', function(e){
             e.preventDefault()
             let name = document.getElementById('name').value;
@@ -318,33 +317,13 @@
                 return;
             }
 
-            let container = document.createElement('div');
-            container.classList.add('taskBox');
-            let h1 = document.createElement('h1');
-            h1.classList.add('taskTitle');
-            h1.textContent = Tname
-            let span = document.createElement('span');
-            span.classList.add('time');
-            let h2 = document.createElement('h2');
-            h2.classList.add('taskTime');
-            h2.textContent = Ttime
-            let checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            let completed = false;
-            completed = checkbox.checked;
-            checkbox.classList.add('taskComplete');
-
-            span.appendChild(h2);
-            span.appendChild(checkbox);
-            container.appendChild(h1);
-            container.appendChild(span);
-            output.appendChild(container);
+           
 
             let newTask = {
                 name: Tname,
                 date: date,
                 time: Ttime,
-                completed: completed.checked
+                completed: false
             }
 
             let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -361,6 +340,33 @@
                 message.style.display = 'none';
             }, 3500)
         })
+
+        window.addEventListener('load', () => {
+            let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+            tasks.forEach(task => {
+                 let container = document.createElement('div');
+                 container.classList.add('taskBox');
+                 let h1 = document.createElement('h1');
+                 h1.classList.add('taskTitle');
+                 h1.textContent = name
+                 let span = document.createElement('span');
+                 span.classList.add('time');
+                 let h2 = document.createElement('h2');
+                 h2.classList.add('taskTime');
+                 h2.textContent = time
+                 let checkbox = document.createElement('input');
+                 checkbox.type = 'checkbox';
+                 let completed = false;
+                 completed = checkbox.checked;
+                 checkbox.classList.add('taskComplete');
+
+                 span.appendChild(h2);
+                 span.appendChild(checkbox);
+                 container.appendChild(h1);
+                 container.appendChild(span);
+                 output.appendChild(container);
+            })
+           })
 
         let menu = document.getElementById('toogle-menu')
         menu.addEventListener('click', function(){
